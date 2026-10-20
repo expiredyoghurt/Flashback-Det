@@ -1,0 +1,466 @@
+{
+"tags": {
+"describe": "This only describes things. It doesn’t explain WHY the character feels or acts this way.",
+"unrelated": "This memory has nothing to do with what is happening now.",
+"toolong": "Too long for this kind of flashback: the story would stop for too long.",
+"rushed": "Too thin: a single line doesn’t give the memory enough weight.",
+"wrongtype": "This plan fits a different kind of flashback, not the one this plot needs."
+},
+"choose": [
+{
+"id": "umbrella",
+"ic": "🌧️🚌👦☂️",
+"title": "Rainy Bus Stop",
+"see": "A boy holds his umbrella over an old lady waiting at a rainy bus stop.",
+"plot": "Today, Dev spots an old lady shivering at the bus stop. The whole story follows how he helps her get home dry. One short memory explains why he never walks past someone in need.",
+"type": "embedded",
+"why": "Most of the story happens now. The memory is only a short pause that explains Dev’s kindness.",
+"plan": [
+{
+"t": "As Dev hesitates, a two-sentence memory: last winter, a stranger had shared an umbrella with him, and he had never forgotten it.",
+"tag": "ok"
+},
+{
+"t": "A paragraph describing Dev’s umbrella: its colour, its handle and where he bought it.",
+"tag": "describe"
+},
+{
+"t": "Three paragraphs about last winter’s storm first, then the bus stop only at the end.",
+"tag": "wrongtype"
+}
+]
+},
+{
+"id": "bee",
+"ic": "🐝🎤😰",
+"title": "The Spelling Bee",
+"see": "A girl stands at a microphone, hands trembling, in a spelling bee.",
+"plot": "Mei must spell the last word to win. The story follows each tense second on stage. A brief memory explains why this word matters so much to her.",
+"type": "embedded",
+"why": "The story is the present moment on stage. The memory is short and explains why it matters.",
+"plan": [
+{
+"t": "Just as she freezes, a short memory: Mum had practised this word with her on the bus, saying, “One letter at a time.”",
+"tag": "ok"
+},
+{
+"t": "A memory of a trip to the zoo, where Mei had seen a giraffe.",
+"tag": "unrelated"
+},
+{
+"t": "Four paragraphs about every spelling lesson since Primary 1, before she says a single letter.",
+"tag": "toolong"
+}
+]
+},
+{
+"id": "kitten",
+"ic": "🐱🏃‍♂️🏥",
+"title": "The Lost Kitten",
+"see": "A boy runs down the street holding a kitten in his arms.",
+"plot": "Aziz races to bring a lost kitten to the vet before it closes. A brief memory of his own cat explains why he runs so fast.",
+"type": "embedded",
+"why": "The race is happening now, so the memory is a quick explanation, not the main story.",
+"plan": [
+{
+"t": "While he runs, a short memory: his cat Mimi had been taken to the vet too late, and he had promised never to be late again.",
+"tag": "ok"
+},
+{
+"t": "A description of the kitten’s fur, whiskers and tiny paws.",
+"tag": "describe"
+},
+{
+"t": "The whole story retells Mimi’s last week, with the kitten only mentioned at the end.",
+"tag": "wrongtype"
+}
+]
+},
+{
+"id": "sewing",
+"ic": "🧵🧓📦",
+"title": "Grandma’s Sewing Box",
+"see": "A girl opens an old wooden sewing box in an attic.",
+"plot": "The smell of lavender takes Nina back to the summer Grandma taught her to sew. Most of the story tells that summer, and Nina returns to the attic at the end.",
+"type": "classical",
+"why": "The past summer is the heart of the story, so the memory takes up most of it.",
+"plan": [
+{
+"t": "Trigger: the smell of lavender. Then a full memory with a problem (crooked stitches) and a climax (her first cushion). Return with the lavender smell.",
+"tag": "ok"
+},
+{
+"t": "Open the box, write one sentence (“She remembered Grandma teaching her”), then go downstairs.",
+"tag": "rushed"
+},
+{
+"t": "Show one tiny memory, then spend the rest of the story on Nina cleaning the attic.",
+"tag": "wrongtype"
+}
+]
+},
+{
+"id": "kite",
+"ic": "🪁🌬️🏖️",
+"title": "The Red Kite",
+"see": "A boy holds an old, torn red kite in a cupboard doorway.",
+"plot": "Hao finds his old red kite and remembers the windy beach day when it flew away. That day is the story.",
+"type": "classical",
+"why": "The beach day is the main event. The present only opens and closes the story.",
+"plan": [
+{
+"t": "Trigger: the torn red tail. Memory: the beach, the sudden gust, the chase, the kite vanishing. Return: Hao holding the old kite.",
+"tag": "ok"
+},
+{
+"t": "A long description of the kite’s colours, size and string, then “It was nice.”",
+"tag": "describe"
+},
+{
+"t": "A memory of last week’s maths test, then back to the cupboard.",
+"tag": "unrelated"
+}
+]
+},
+{
+"id": "ticket",
+"ic": "🚂🎫👴",
+"title": "Grandpa’s Ticket",
+"see": "A boy holds an old train ticket beside a photo of his grandpa.",
+"plot": "An old train ticket takes Wei back to the long journey he once took with Grandpa. That journey fills most of the story.",
+"type": "classical",
+"why": "The journey is the main story, told in the past, with a short present frame.",
+"plan": [
+{
+"t": "Trigger: the punched hole in the ticket. Memory: boarding, the missed stop, Grandpa’s calm solution, arriving. Return: Wei tucking the ticket back in the book.",
+"tag": "ok"
+},
+{
+"t": "One sentence: “Grandpa and I had gone on a train,” then back to dinner.",
+"tag": "rushed"
+},
+{
+"t": "Mention the journey briefly while Wei hurries to catch a train today, with the main action in the present.",
+"tag": "wrongtype"
+}
+]
+},
+{
+"id": "accent",
+"ic": "🗣️🏫👧",
+"title": "The New Girl’s Accent",
+"see": "A girl stands near a new classmate who is sitting alone.",
+"plot": "Last year, Dina laughed at a classmate’s accent and hurt her feelings. Today a new girl with a similar accent joins the class, and this time Dina welcomes her.",
+"type": "linked",
+"why": "A past mistake teaches Dina a lesson, so she acts differently in a similar situation.",
+"plan": [
+{
+"t": "A memory of the hurt classmate and Dina’s regret; then a similar moment today; then Dina invites the new girl to sit with her.",
+"tag": "ok"
+},
+{
+"t": "A description of the classroom walls, desks and posters.",
+"tag": "describe"
+},
+{
+"t": "Tell the whole story of last year’s class and never come back to today.",
+"tag": "wrongtype"
+}
+]
+},
+{
+"id": "vase",
+"ic": "🏺😟👦",
+"title": "The Broken Cup",
+"see": "A boy looks worried at a cup lying broken on the kitchen floor.",
+"plot": "Last time Ravi broke a vase, he hid it and Grandma was sad he hadn’t told her. Today he breaks a cup and tells the truth straight away.",
+"type": "linked",
+"why": "The memory teaches Ravi a lesson about honesty and changes what he does today.",
+"plan": [
+{
+"t": "A memory of hiding the vase and Grandma’s sad face; then the broken cup today; then Ravi calling out, “Grandma, I broke it!”",
+"tag": "ok"
+},
+{
+"t": "A memory of Ravi’s birthday cake, then he cleans up quietly.",
+"tag": "unrelated"
+},
+{
+"t": "One line: “He remembered a vase.” Then he sweeps up the pieces and says nothing.",
+"tag": "rushed"
+}
+]
+},
+{
+"id": "ropes",
+"ic": "🧗😨🌲",
+"title": "The High Ropes",
+"see": "A boy looks up at a high ropes course, gripping his helmet.",
+"plot": "Raj once quit cycling lessons after a fall and watched his friends ride without him. Now at the high ropes course he is scared, but this time he keeps trying.",
+"type": "linked",
+"why": "The old experience taught Raj not to give up, and it changes how he acts now.",
+"plan": [
+{
+"t": "A memory of quitting cycling and watching friends ride away; then the scary ropes today; then Raj taking the first step up.",
+"tag": "ok"
+},
+{
+"t": "A description of the ropes, the trees and the colour of his helmet.",
+"tag": "describe"
+},
+{
+"t": "Three paragraphs about the ropes course only, without any memory.",
+"tag": "wrongtype"
+}
+]
+}
+],
+"repair": [
+{
+"id": "rlong",
+"type": "embedded",
+"title": "Too Much Memory",
+"parts": [
+"Dev felt his stomach tighten as the old lady shivered at the bus stop.",
+"Last winter, Dev’s grandpa had taken him to the market. They had walked past many stalls selling fruit, shoes, toys and clothes. Grandpa had bought him a red scarf and a hot bun, and they had sat on a bench eating. It had been very cold, and then it had begun to rain, and a stranger had shared an umbrella with them. Grandpa had thanked the stranger and told Dev, “Kindness costs nothing.” Then they had walked home, and Dev had changed into dry clothes and drunk hot tea and watched television all evening.",
+"Dev blinked, stepped forward and held his umbrella over the old lady."
+],
+"edit": 1,
+"diag": [
+{
+"t": "The flashback is far too long for an embedded flashback.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "There is no time clue.",
+"f": "There is one: “Last winter”."
+},
+{
+"t": "The story never comes back to the present.",
+"f": "The last box does bring Dev back."
+},
+{
+"t": "The flashback does not use “had”.",
+"f": "It uses “had” correctly."
+}
+],
+"targets": [
+"len",
+"had",
+"explain"
+],
+"model": "Last winter, Dev’s grandpa had shared his umbrella with a stranger in the rain. “Kindness costs nothing,” Grandpa had told him, and Dev had never forgotten it."
+},
+{
+"id": "rdesc",
+"type": "embedded",
+"title": "Describing, Not Explaining",
+"parts": [
+"Tom picked up the puppy, and its warmth reminded him of something.",
+"Max had brown fur with white patches. He had long floppy ears, a wet black nose and a tail that wagged all day.",
+"Tom blinked and looked down at the puppy in his arms."
+],
+"edit": 1,
+"diag": [
+{
+"t": "The memory only describes Max. It doesn’t explain why Tom cares about this puppy.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "The memory is far too long.",
+"f": "It is short enough."
+},
+{
+"t": "There is no return to the present.",
+"f": "Tom does come back to the puppy."
+},
+{
+"t": "The trigger is missing.",
+"f": "The warmth of the puppy is the trigger."
+}
+],
+"targets": [
+"explain",
+"had"
+],
+"model": "Tom remembered Max, who had been abandoned and scared at the shelter, just like this puppy. That day, Tom had promised to always help animals in need."
+},
+{
+"id": "rreturn",
+"type": "embedded",
+"title": "Stuck in the Past",
+"parts": [
+"Tom picked up the puppy, and its warmth reminded him of something.",
+"Last year, Tom had found Max at the shelter, abandoned and scared. He had promised to always help animals who needed him.",
+"Tom had remembered how Max had been scared at the shelter. He had loved Max so much and had cried when Max died."
+],
+"edit": 2,
+"diag": [
+{
+"t": "The story never comes back to the present puppy.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "The flashback is too long.",
+"f": "The memory box is short."
+},
+{
+"t": "There is no time clue.",
+"f": "“Last year” is a time clue."
+},
+{
+"t": "The first sentence is not a trigger.",
+"f": "The trigger is fine."
+}
+],
+"targets": [
+"ret"
+],
+"model": "Tom blinked and looked down at the puppy in his arms. He held it closer and walked on."
+},
+{
+"id": "rshort",
+"type": "classical",
+"title": "A Memory That Is Too Small",
+"parts": [
+"Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile.",
+"She remembered learning to ride with Grandpa.",
+"Ring! The bell sounded and Mei was back in the dusty storeroom, smiling."
+],
+"edit": 1,
+"diag": [
+{
+"t": "In a classical flashback the memory is the main story, so this one is far too short.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "The story does not return to the present.",
+"f": "It does: “back in the dusty storeroom”."
+},
+{
+"t": "There is no trigger in the present.",
+"f": "The faded bell is the trigger."
+},
+{
+"t": "The ending is too long.",
+"f": "The ending is short and fine."
+}
+],
+"targets": [
+"len",
+"had",
+"time"
+],
+"model": "As Mei pressed the bell, she was seven again. Last summer, Grandpa had held the back of the seat as she wobbled down the lane. “Don’t let go!” she cried. She tumbled, and her knee stung. But Grandpa only smiled and said, “Try once more.” On the last try, his hands were gone, and the wind rushed past as Mei pedalled all by herself."
+},
+{
+"id": "rtime",
+"type": "classical",
+"title": "Lost in Time",
+"parts": [
+"Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile.",
+"Grandpa held the back of the seat as Mei wobbled down the lane. She tumbled and her knee stung. Grandpa only smiled and told her to try once more. On the last try his hands were gone, and she pedalled all by herself.",
+"Ring! The bell sounded and Mei was back in the dusty storeroom, smiling."
+],
+"edit": 1,
+"diag": [
+{
+"t": "Nothing tells the reader we have gone back in time: no time clue and no “had”.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "The memory has no problem or climax.",
+"f": "It has both: she tumbles, then rides alone."
+},
+{
+"t": "The story never returns to the present.",
+"f": "The last box returns to the storeroom."
+},
+{
+"t": "The memory is too short.",
+"f": "It is long enough."
+}
+],
+"targets": [
+"had",
+"time"
+],
+"model": "Last summer, Grandpa had held the back of the seat as Mei wobbled down the lane. She tumbled and her knee stung. Grandpa only smiled and told her to try once more. On the last try his hands were gone, and she pedalled all by herself."
+},
+{
+"id": "rlink",
+"type": "linked",
+"title": "The Missing Link",
+"parts": [
+"At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted because he knew that feeling.",
+"Last year, Ravi had been the new boy. He had stood alone by the fence, and nobody had asked him to play. Then Lisa waved and called him over, and that small wave changed his whole day.",
+"Ravi looked at the boy for a while.",
+"Ravi took a deep breath and walked over. He waved and asked, “Want to play with us?”"
+],
+"edit": 2,
+"diag": [
+{
+"t": "Nothing shows that the present situation is like the memory.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "Ravi does not act differently at the end.",
+"f": "He walks over and invites the boy."
+},
+{
+"t": "The memory does not teach a lesson.",
+"f": "It shows how a small wave helped."
+},
+{
+"t": "There is no trigger.",
+"f": "“He knew that feeling” is the trigger."
+}
+],
+"targets": [
+"link"
+],
+"model": "The boy held his lunch box tightly, just as Ravi once had."
+},
+{
+"id": "ract",
+"type": "linked",
+"title": "Telling, Not Showing",
+"parts": [
+"At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted because he knew that feeling.",
+"Last year, Ravi had been the new boy. He had stood alone by the fence, and nobody had asked him to play. Then Lisa waved and called him over, and that small wave changed his whole day.",
+"The boy held his lunch box tightly, just as Ravi once had.",
+"Ravi felt kind and happy that day."
+],
+"edit": 3,
+"diag": [
+{
+"t": "The ending only tells a feeling. It doesn’t show what Ravi DOES because of the lesson.",
+"ok": 1,
+"f": ""
+},
+{
+"t": "The link to the present is missing.",
+"f": "“Just as Ravi once had” links them."
+},
+{
+"t": "The memory is missing.",
+"f": "The memory box is there."
+},
+{
+"t": "The trigger is missing.",
+"f": "The trigger is there."
+}
+],
+"targets": [
+"act"
+],
+"model": "Ravi took a deep breath and walked over to the boy. He waved and asked, “Want to play with us?”"
+}
+]
+}

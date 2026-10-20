@@ -1,0 +1,2406 @@
+{
+"types": {
+"classical": {
+"kind": "Classical Flashback",
+"checks": [
+"I started in the present with a trigger",
+"I used a time clue to go into the memory",
+"I started the memory with “had”, then used simple past",
+"My memory has a problem and a climax",
+"I came back to the present at the end"
+],
+"rq": [
+"Where did your story start and end? Why?",
+"How did you move into the memory?",
+"Why is the memory the main part of this story?",
+"How is a classical flashback different from an embedded flashback?",
+"One thing I learned about classical flashbacks:"
+],
+"map": [
+[
+"Present",
+1,
+0
+],
+[
+"Memory (the main story)",
+4,
+1
+],
+[
+"Present",
+1,
+0
+]
+],
+"scaf": [
+{
+"s": [
+"My story started in the present when ___.",
+"It ended back in the present with ___ because…",
+"Starting and ending in the present helps the reader…"
+],
+"i": [
+"A classical flashback starts and ends in the present.",
+"The ending shows what the memory means to the character.",
+"Coming back makes the story feel complete."
+]
+},
+{
+"s": [
+"I moved into the memory when ___ (the trigger).",
+"The time clue I used was ___, so the reader knew…",
+"The trigger helped because…"
+],
+"i": [
+"A sound, smell, touch or object can trigger a memory.",
+"A time clue like “Last summer…” shows that time has changed.",
+"Start the memory with “had”, then use simple past."
+]
+},
+{
+"s": [
+"The memory is the main part because…",
+"Most of the story happens in the past because…",
+"The problem and the climax happened in the memory when…"
+],
+"i": [
+"The past event is the heart of the story.",
+"The memory has its own problem and climax.",
+"The present scenes only frame the memory."
+]
+},
+{
+"s": [
+"A classical flashback is ___, but an embedded flashback is ___.",
+"In a classical flashback the memory is ___ long.",
+"The main difference is…"
+],
+"i": [
+"Classical: the memory is the main story, told over several paragraphs.",
+"Embedded: a short pause of 1–2 paragraphs inside the action.",
+"Classical flashbacks return to the present at the end."
+]
+},
+{
+"s": [
+"I learned that a classical flashback…",
+"Next time I will remember to…",
+"A good classical flashback needs…"
+],
+"i": [
+"Begin with a trigger in the present.",
+"Tell the memory as a full story with a problem and a climax.",
+"Return to the present at the end."
+]
+}
+],
+"frame": [
+{
+"r": "pre",
+"l": "1. Opening: the present",
+"h": "Show the present and the object, sound or feeling that triggers the memory."
+},
+{
+"r": "mem",
+"l": "2. The memory (the main story)",
+"h": "A beginning, a problem and a climax. Start with “had”, then use simple past."
+},
+{
+"r": "post",
+"l": "3. Return to the present",
+"h": "Use the same trigger to come back. What does the memory mean now?"
+}
+],
+"nudge": [
+null,
+null,
+"because",
+"compare",
+"action"
+]
+},
+"linked": {
+"kind": "Linked Flashback",
+"checks": [
+"I started in the present with a trigger",
+"My memory taught the character a lesson",
+"I started the memory with “had”",
+"I showed a similar situation in the present",
+"My character acts differently at the end"
+],
+"rq": [
+"What lesson did the memory teach?",
+"How did the present situation link back to the memory?",
+"How did the character act differently at the end?",
+"How is a linked flashback different from a classical flashback?",
+"One thing I learned about linked flashbacks:"
+],
+"map": [
+[
+"Present",
+1,
+0
+],
+[
+"Memory: the lesson",
+3,
+1
+],
+[
+"Similar situation",
+1,
+0
+],
+[
+"Acts differently",
+1,
+0
+]
+],
+"scaf": [
+{
+"s": [
+"The memory taught the character that…",
+"From the memory, the character learned to…",
+"The character had learned that ___ when…"
+],
+"i": [
+"The lesson comes from what happened in the memory.",
+"It can be about kindness, honesty, courage or not giving up.",
+"Try to say the lesson in one sentence."
+]
+},
+{
+"s": [
+"The present was like the memory because…",
+"The character noticed that ___ was just like ___.",
+"The link was shown when…"
+],
+"i": [
+"A similar feeling, place or problem.",
+"A sentence in the second-last paragraph, like “just as…” or “the same…”.",
+"The reader should see that now is like then."
+]
+},
+{
+"s": [
+"At the end, the character ___ instead of ___.",
+"The character acted differently because…",
+"This showed that the lesson…"
+],
+"i": [
+"In the memory, the character was treated (or acted) one way. Now they choose another.",
+"The action proves the lesson.",
+"Show the action, don’t just tell the feeling."
+]
+},
+{
+"s": [
+"A linked flashback ___, but a classical flashback ___.",
+"In a linked flashback the present story…",
+"The difference is that in a linked flashback the character…"
+],
+"i": [
+"Linked: the memory changes what the character does now.",
+"Linked: a similar situation comes back near the end.",
+"Classical: the memory is the main story and the character returns at the end."
+]
+},
+{
+"s": [
+"I learned that a linked flashback…",
+"Next time I will…",
+"The most important part is…"
+],
+"i": [
+"The memory must teach a lesson.",
+"Show the similar situation before the ending.",
+"The ending must show the character acting differently."
+]
+}
+],
+"frame": [
+{
+"r": "pre",
+"l": "1. The present trigger",
+"h": "A situation that reminds the character of the past."
+},
+{
+"r": "mem",
+"l": "2. The memory: the lesson",
+"h": "Start with “had”. What happened, and what lesson did the character learn?"
+},
+{
+"r": "link",
+"l": "3. A similar situation now",
+"h": "Show that now is like then (“just as…”, “the same…”)."
+},
+{
+"r": "act",
+"l": "4. Acting differently",
+"h": "What does the character DO because of the lesson?"
+}
+],
+"nudge": [
+null,
+null,
+null,
+"compare",
+"action"
+]
+},
+"embedded": {
+"kind": "Embedded Flashback",
+"checks": [
+"My memory is only 1–2 paragraphs",
+"It comes at an emotional moment in the action",
+"It explains WHY the character feels or acts this way",
+"I started it with “had”, then used simple past",
+"I returned to the present action straight away"
+],
+"rq": [
+"Where did you place your flashback? Why?",
+"How long was it? Why was that the right length?",
+"What did your flashback explain about the character?",
+"How is an embedded flashback different from a classical flashback?",
+"One thing I learned about placing flashbacks:"
+],
+"map": [
+[
+"Setting",
+1,
+0
+],
+[
+"Rising action",
+1,
+0
+],
+[
+"Short memory",
+1,
+1
+],
+[
+"Climax",
+1,
+0
+],
+[
+"Resolution",
+1,
+0
+]
+],
+"scaf": [
+{
+"s": [
+"I put my flashback ___ because…",
+"I chose the moment when ___ because the character felt ___.",
+"If I had put it ___, then the reader would…"
+],
+"i": [
+"Placing it at the most emotional moment helps the reader feel why it matters.",
+"Too early: the reader doesn’t feel the tension yet.",
+"Too late: the main action is over, so it is only a reflection."
+]
+},
+{
+"s": [
+"My flashback was ___ long because…",
+"A short flashback means the reader…",
+"If my flashback was too long, the reader might…"
+],
+"i": [
+"An embedded flashback is only 1–2 paragraphs.",
+"A long memory makes us forget the present story.",
+"A very long memory is a classical flashback, not an embedded one."
+]
+},
+{
+"s": [
+"My flashback showed that the character ___.",
+"The memory explained why the character felt ___ because…",
+"Because of the memory, the reader understands that…"
+],
+"i": [
+"Why the character feels or acts a certain way.",
+"A match between the past and the present moment.",
+"What the character values, or a promise they made."
+]
+},
+{
+"s": [
+"An embedded flashback is ___, but a classical flashback is ___.",
+"In an embedded flashback the main story is ___.",
+"The biggest difference is…"
+],
+"i": [
+"Embedded: a short memory inside the action. Classical: the memory is the main story.",
+"Embedded: the story keeps moving in the present.",
+"Classical: starts in the present, spends most of the story in the past, then returns."
+]
+},
+{
+"s": [
+"I learned that a flashback should…",
+"Next time I will…",
+"The most important thing to remember is…"
+],
+"i": [
+"Put it where the character feels the most.",
+"Keep it short and specific.",
+"Explain WHY, don’t just describe. Then get back to the present quickly."
+]
+}
+],
+"frame": [
+{
+"r": "pre",
+"l": "1. Before the memory",
+"h": "The present moment: what is happening, and what makes the character remember?"
+},
+{
+"r": "mem",
+"l": "2. The flashback (1–2 short paragraphs)",
+"h": "Start with “had”, add a time clue, and explain WHY it matters."
+},
+{
+"r": "post",
+"l": "3. Back in the present",
+"h": "Bring the character back to the action."
+}
+],
+"nudge": [
+"because",
+"because",
+"because",
+"compare",
+"action"
+]
+}
+},
+"stories": {
+"embedded": {
+"type": "embedded",
+"title": "The Lost Puppy",
+"ic": "🐶",
+"blurb": "Tom finds a lost puppy. Where should the memory of his dog Max go, and how long should it be?",
+"wp": "Write 3–5 sentences: Tom picks up the puppy and remembers Max. Start the memory with “had”, then bring Tom back to the puppy.",
+"n": {
+"open": {
+"q": "How should your story begin?",
+"h": "Which opening makes you want to keep reading?",
+"o": [
+{
+"l": "Action opening",
+"t": "A small puppy whimpered under the bus stop.",
+"r": "g",
+"p": 20,
+"f": "Strong hook! It grabs the reader straight away.",
+"tip": "Starting with action makes readers want to read on.",
+"n": "approach",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "The park was quiet that Sunday morning when Tom walked by.",
+"r": "o",
+"p": 10,
+"f": "A bit slow. Readers wait a while for something to happen.",
+"tip": "Try starting with action.",
+"n": "approach",
+"x": 1
+},
+{
+"l": "Character description",
+"t": "Tom was a kind boy who loved animals.",
+"r": "b",
+"p": 5,
+"f": "This is 'telling', not 'showing'.",
+"tip": "Let readers discover Tom is kind from what he does.",
+"n": "approach",
+"x": 1
+}
+],
+"k": "hook"
+},
+"approach": {
+"q": "What does Tom do when he sees the puppy?",
+"h": "Which choice builds feeling?",
+"o": [
+{
+"l": "Runs over and picks it up at once",
+"t": "Tom ran over and scooped up the puppy.",
+"r": "o",
+"p": 10,
+"f": "It works, but it feels rushed.",
+"tip": "Slower moments give a memory room to land.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Approaches slowly and gently",
+"t": "Tom knelt down and crept closer, speaking softly. Then he gently picked up the puppy. Its warmth reminded him of something...",
+"r": "g",
+"p": 20,
+"f": "Good pacing! It builds an emotional connection.",
+"tip": "A quiet, caring moment is perfect for a memory to surface.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Runs home to get food first",
+"t": "Tom raced home for some food, then hurried back and picked up the puppy.",
+"r": "b",
+"p": 5,
+"f": "This breaks the story's momentum and can confuse the order of events.",
+"tip": "Keep the main action together so the flashback has a clear trigger.",
+"n": "place",
+"x": 1
+}
+],
+"k": "hook"
+},
+"place": {
+"q": "Should you add a flashback about Tom's old dog Max? Where?",
+"h": "Pick the moment when Tom feels the most.",
+"o": [
+{
+"l": "RIGHT NOW (after picking up the puppy)",
+"t": "",
+"r": "g",
+"p": 0,
+"f": "Nice! The puppy’s warmth is a natural trigger.",
+"tip": "Now choose how long it should be.",
+"n": "len",
+"b": "placer",
+"pl": "now"
+},
+{
+"l": "LATER (during the search for the owner)",
+"t": "Tom carried the puppy through the neighbourhood, knocking on doors. No one recognised it.",
+"r": "g",
+"p": 0,
+"f": "Searching is another good moment for a memory.",
+"tip": "Now decide if Tom remembers something.",
+"n": "later",
+"x": 1,
+"b": "placer",
+"pl": "later"
+},
+{
+"l": "AT THE END (after the puppy is reunited)",
+"t": "After an hour of searching, Tom found the puppy's owner. The grateful family thanked him warmly.\n\nAs Tom walked home, he thought about Max...",
+"r": "o",
+"p": 10,
+"f": "Too late for an embedded flashback. The main action is over.",
+"tip": "Embedded flashbacks work DURING the action. This is more like a reflection.",
+"n": "sum",
+"x": 1,
+"pl": "end"
+},
+{
+"l": "DON'T add a flashback",
+"t": "Tom searched for the owner and reunited them. The family thanked him and he went home happy.",
+"r": "o",
+"p": 5,
+"f": "The story works but we don't know WHY Tom cares so much.",
+"tip": "A short flashback could show Tom's connection to animals. Try one when Tom picks up the puppy.",
+"n": "sum",
+"x": 1,
+"pl": "none"
+}
+],
+"k": "placement"
+},
+"len": {
+"q": "How long should the flashback be?",
+"h": "An embedded flashback is short.",
+"o": [
+{
+"l": "Very brief (2–3 sentences)",
+"t": "The puppy's warmth reminded Tom of Max, the dog he had lost last year. Max had been his best friend and had taught him to always help animals in need.",
+"r": "g",
+"p": 25,
+"f": "Excellent! Just enough to explain Tom's motivation, and the story flows on.",
+"tip": "Short and purposeful is the embedded way.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "Medium (1 paragraph)",
+"t": "The puppy's warmth reminded Tom of Max. A year ago, Max had been found abandoned at a shelter, scared and alone just like this puppy. Tom had promised that day to always help animals who needed him.",
+"r": "g",
+"p": 20,
+"f": "Good! Meaningful backstory. Perhaps a little long, but it works.",
+"tip": "One paragraph is the most you need.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "Long (3–4 paragraphs)",
+"t": "The puppy's warmth reminded Tom of Max.\n\nThree years ago, Tom and his parents had visited the animal shelter. They had walked past many cages when Tom spotted a small brown puppy cowering in the corner...\n\n(…more paragraphs about training, playing, vet visits and saying goodbye…)\n\nTom blinked and looked down at the puppy in his arms.",
+"r": "b",
+"p": 5,
+"f": "Too long! We forgot about the puppy in Tom’s arms.",
+"tip": "This looks like a CLASSICAL flashback, where the memory IS the story. Shorten it to 1 paragraph.",
+"n": "len",
+"x": 1,
+"rt": 1,
+"nt": 1
+}
+],
+"k": "length"
+},
+"content": {
+"q": "What should the flashback focus on?",
+"h": "Explain WHY Tom cares. Don’t just describe.",
+"o": [
+{
+"l": "What Max looked like",
+"t": "Tom remembered Max. Max had brown fur with white patches, long floppy ears, and a tail that wagged whenever Tom came home.",
+"r": "o",
+"p": 5,
+"f": "Weak choice. It describes Max but doesn't explain why Tom cares about THIS puppy.",
+"tip": "Explain motivations or make a meaningful parallel. Don’t just describe.",
+"n": "sum",
+"x": 1,
+"fl": 1
+},
+{
+"l": "Finding Max abandoned (the parallel moment)",
+"t": "Tom remembered finding Max at the shelter, abandoned and scared just like this puppy. He had promised himself that day to always help animals who needed him.",
+"r": "g",
+"p": 30,
+"f": "Excellent! Both dogs were abandoned, and the promise explains Tom's motivation.",
+"tip": "Perfect strategic use of an embedded flashback!",
+"n": "sum",
+"x": 1,
+"b": "content",
+"fl": 1
+},
+{
+"l": "Facts about dogs",
+"t": "Tom remembered having a dog. Dogs need food, water, exercise and lots of love every day.",
+"r": "b",
+"p": 0,
+"f": "This is not a flashback! It is general information, not a specific memory.",
+"tip": "A flashback must show a specific moment from the past.",
+"n": "content",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"later": {
+"q": "As Tom searches, should he remember something about Max?",
+"h": "Is there a matching moment in the present?",
+"o": [
+{
+"l": "Yes: remember when Max ran away",
+"t": "Tom remembered the time Max had run away. He had searched for hours, knocking on every door, refusing to give up. That day taught him that caring and persistence could bring lost animals home.\n\nTom took a deep breath and knocked on the next door.",
+"r": "g",
+"p": 30,
+"f": "Strategic placement! The two searches match, so the memory feels natural.",
+"tip": "A parallel action is a great trigger.",
+"n": "sum",
+"x": 1,
+"b": "content",
+"fl": 1
+},
+{
+"l": "No, keep walking",
+"t": "Tom kept walking, knocking on door after door until the puppy's owner opened theirs.",
+"r": "o",
+"p": 5,
+"f": "The story moves on, but we still don’t know why Tom works so hard.",
+"tip": "Try the flashback to deepen the emotion.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "placement"
+}
+}
+},
+"classical": {
+"type": "classical",
+"title": "The Old Bicycle",
+"ic": "🚲",
+"blurb": "Mei finds her grandfather’s old bicycle. The memory of learning to ride IS the main story.",
+"wp": "Write the first and last paragraph of the story: a present trigger to begin, and the return at the end.",
+"n": {
+"open": {
+"q": "How should your story begin?",
+"h": "Start in the present, with something that triggers a memory.",
+"o": [
+{
+"l": "In the present, with something that triggers a memory",
+"t": "Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile.",
+"r": "g",
+"p": 20,
+"f": "Great start! The present scene has an object that can trigger the memory.",
+"tip": "A classical flashback begins in the present, then slips into the past.",
+"n": "trigger",
+"x": 1
+},
+{
+"l": "Jump straight into the past",
+"t": "Last summer, Mei learned to ride a bicycle.",
+"r": "o",
+"p": 5,
+"f": "Good story, but it is not a flashback yet. The reader never sees the present.",
+"tip": "Begin in the present so the memory has something to return to.",
+"n": "trigger",
+"x": 1
+},
+{
+"l": "Describe the whole storeroom",
+"t": "The storeroom was dark and dusty. There were boxes, old chairs, paint tins and cobwebs everywhere.",
+"r": "o",
+"p": 10,
+"f": "Nice detail, but nothing happens and nothing triggers a memory.",
+"tip": "Choose one object in the present that will start the memory.",
+"n": "trigger",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"trigger": {
+"q": "How does Mei travel into the memory?",
+"h": "Use a sound, touch or smell to travel back.",
+"o": [
+{
+"l": "A touch and a feeling carry her back",
+"t": "As Mei pressed the faded bell, it went ring-a-ling, and she was seven years old again.",
+"r": "g",
+"p": 25,
+"f": "Excellent! A clear trigger and a smooth transition.",
+"tip": "Use a sound, smell, touch or object, then a time clue.",
+"n": "memory",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "\"Suddenly it was last summer.\"",
+"t": "Suddenly, it was last summer.",
+"r": "o",
+"p": 10,
+"f": "It works, but it is abrupt. The reader is not guided in.",
+"tip": "Show what triggers the memory first.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "She falls asleep and dreams",
+"t": "Mei fell asleep on the old chair and began to dream.",
+"r": "o",
+"p": 5,
+"f": "A dream is not a memory. Flashbacks show real events that already happened.",
+"tip": "Pick a real trigger instead.",
+"n": "memory",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"memory": {
+"q": "How do you tell the memory?",
+"h": "In a classical flashback the memory is the main story.",
+"o": [
+{
+"l": "Most of the story: a beginning, a problem and a climax",
+"t": "Grandpa had held the back of the seat as Mei wobbled down the lane. \"Don't let go!\" she cried. She wobbled, she tumbled, and her knee stung. But Grandpa only smiled. \"Again,\" he said.\n\nOn the last try, his hands were gone. The wind rushed past as Mei pedalled all by herself.",
+"r": "g",
+"p": 30,
+"f": "Excellent! In a classical flashback the memory IS the main story, so it has its own problem and climax.",
+"tip": "Start with past perfect (had held), then use simple past.",
+"n": "back",
+"x": 1,
+"b": "length"
+},
+{
+"l": "One short sentence",
+"t": "She remembered learning to ride with Grandpa.",
+"r": "b",
+"p": 5,
+"f": "That is an embedded flashback. Here the memory is the story.",
+"tip": "Tell the memory in several paragraphs.",
+"n": "memory",
+"x": 1,
+"rt": 1
+},
+{
+"l": "Lots of different memories, a few lines each",
+"t": "She remembered riding to the park, then the beach, then the market, then the library.",
+"r": "o",
+"p": 10,
+"f": "Too scattered. No problem and no climax.",
+"tip": "Pick ONE memory and tell it fully.",
+"n": "back",
+"x": 1
+}
+],
+"k": "length"
+},
+"back": {
+"q": "How does the story return to the present?",
+"h": "Use the same trigger to return.",
+"o": [
+{
+"l": "The trigger brings her back",
+"t": "Ring! The bell sounded beneath Mei's thumb, and she was back in the dusty storeroom. She wheeled the bicycle into the sunshine. \"Ready to ride again, Grandpa,\" she whispered.",
+"r": "g",
+"p": 25,
+"f": "Excellent! The same trigger returns us, and the ending shows what the memory means to Mei.",
+"tip": "Return with the same trigger you used to leave.",
+"n": "sum",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "Stay in the memory forever",
+"t": "Mei pedalled on and on, and the story ended there.",
+"r": "b",
+"p": 0,
+"f": "The reader never comes back to the present.",
+"tip": "A classical flashback returns to the present in the last paragraph.",
+"n": "back",
+"x": 1,
+"rt": 1
+},
+{
+"l": "A sudden ending",
+"t": "Then Mei went to dinner.",
+"r": "o",
+"p": 10,
+"f": "Abrupt. It does not link back to the memory.",
+"tip": "Tell us how the memory changed or comforted the character.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
+}
+}
+},
+"linked": {
+"type": "linked",
+"title": "The New Boy",
+"ic": "🎒",
+"blurb": "Ravi sees a lonely new boy. A memory from last year teaches him how to act.",
+"wp": "Write the two paragraphs that link the memory to now: the similar situation, and Ravi acting differently.",
+"n": {
+"open": {
+"q": "How should your story begin?",
+"h": "Which opening starts with something that reminds Ravi of the past?",
+"o": [
+{
+"l": "In the present, with a trigger",
+"t": "At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted, because he knew that feeling.",
+"r": "g",
+"p": 20,
+"f": "Great! The trigger is a present situation that connects to the past.",
+"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "Recess was loud and sunny, and everyone was playing.",
+"r": "o",
+"p": 10,
+"f": "A bit slow, and nothing triggers a memory yet.",
+"tip": "Show the situation that makes Ravi remember.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Telling us the decision",
+"t": "Ravi decided to be kind to the new boy.",
+"r": "b",
+"p": 5,
+"f": "This 'tells' the ending before the memory teaches the lesson.",
+"tip": "Let the memory explain why Ravi acts later.",
+"n": "memory",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"memory": {
+"q": "What should the memory show?",
+"h": "What lesson should Ravi remember?",
+"o": [
+{
+"l": "A moment that taught him a lesson",
+"t": "Last year, Ravi had been the new boy. He had stood alone by the fence for the whole of recess, and nobody had asked him to play. Then Lisa had waved. \"Come and join us!\" she had called. That small wave had changed his whole day, and Ravi had never forgotten it.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory shows a lesson: a small kindness matters.",
+"tip": "The memory should teach the character something.",
+"n": "link",
+"x": 1,
+"b": "content"
+},
+{
+"l": "A description of his first day",
+"t": "Last year, Ravi had worn a stiff new uniform and carried a blue bag. The canteen had sold noodles and rice.",
+"r": "o",
+"p": 10,
+"f": "Description, but no lesson to carry back to the present.",
+"tip": "Choose a moment that teaches something.",
+"n": "link",
+"x": 1
+},
+{
+"l": "A memory about winning a race",
+"t": "Last year, Ravi had won the school race and everyone had cheered.",
+"r": "b",
+"p": 5,
+"f": "It has nothing to do with the present situation.",
+"tip": "The memory must connect to what Ravi faces now.",
+"n": "memory",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"link": {
+"q": "How do you link back to the present?",
+"h": "Show how now is like then.",
+"o": [
+{
+"l": "Show the situation is similar",
+"t": "Back on the steps, Ravi looked at the boy again. He was holding his lunch box tightly, just as Ravi once had.",
+"r": "g",
+"p": 25,
+"f": "Excellent! The similar situation (second-last paragraph) links the memory to now.",
+"tip": "Say or show how the present matches the past.",
+"n": "ending",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "Skip the link",
+"t": "Ravi stood up.",
+"r": "o",
+"p": 5,
+"f": "The reader can’t see how the memory connects to now.",
+"tip": "Add a sentence that links past and present.",
+"n": "ending",
+"x": 1
+}
+],
+"k": "link"
+},
+"ending": {
+"q": "How does Ravi act at the end?",
+"h": "The lesson must change what Ravi does.",
+"o": [
+{
+"l": "He acts differently because of the lesson",
+"t": "Ravi took a deep breath and walked over. He waved, just as Lisa once had. \"Want to play with us?\" The boy's face lit up.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory changed how Ravi acts.",
+"tip": "In a linked flashback, the lesson changes what the character does.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "He ignores the boy",
+"t": "Ravi walked past. It was none of his business.",
+"r": "b",
+"p": 0,
+"f": "Then the memory taught nothing.",
+"tip": "Show Ravi using the lesson he remembered.",
+"n": "ending",
+"x": 1,
+"rt": 1
+},
+{
+"l": "Tell us how he feels",
+"t": "Ravi felt kind and happy.",
+"r": "o",
+"p": 10,
+"f": "This is telling, not showing.",
+"tip": "Show the new action that proves he learned.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "link"
+}
+}
+},
+"treehouse": {
+"type": "classical",
+"title": "The Treehouse",
+"ic": "🌳🪜",
+"blurb": "Hui Ling finds the old rope ladder to a treehouse she built with her cousin.",
+"wp": "Write the paragraph where Hui Ling touches the rope and is pulled back into last summer.",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Start in the present, with something that triggers a memory.",
+"o": [
+{
+"l": "Present, with a trigger",
+"t": "Hui Ling brushed the leaves off the old rope ladder behind the garden shed. It still smelled of rain and sunshine.",
+"r": "g",
+"p": 20,
+"f": "Great start! The present scene has an object that can trigger the memory.",
+"tip": "A classical flashback begins in the present, then slips into the past.",
+"n": "trigger",
+"x": 1
+},
+{
+"l": "Jump straight into the past",
+"t": "Last summer, Hui Ling and her cousin Amir built a treehouse.",
+"r": "o",
+"p": 5,
+"f": "Good story, but it isn’t a flashback yet. The reader never sees the present.",
+"tip": "Begin in the present so the memory has something to return to.",
+"n": "trigger",
+"x": 1
+},
+{
+"l": "Describe the place",
+"t": "The garden had a shed, a flowerbed, a water tap and a fence.",
+"r": "o",
+"p": 10,
+"f": "Nice detail, but nothing happens and nothing triggers a memory.",
+"tip": "Choose one object in the present that will start the memory.",
+"n": "trigger",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"trigger": {
+"q": "How does the character travel into the memory?",
+"h": "Use a sound, touch or smell to travel back.",
+"o": [
+{
+"l": "A touch and a feeling carry them back",
+"t": "She tugged the rope, and the old branch creaked. The sound pulled her back to last summer.",
+"r": "g",
+"p": 25,
+"f": "Excellent! A clear trigger and a smooth transition.",
+"tip": "Use a sound, smell, touch or object, then a time clue.",
+"n": "memory",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "A sudden jump",
+"t": "Suddenly, it was last summer.",
+"r": "o",
+"p": 10,
+"f": "It works, but it is abrupt. The reader isn’t guided in.",
+"tip": "Show what triggers the memory first.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "A dream",
+"t": "Hui Ling fell asleep under the tree and began to dream.",
+"r": "o",
+"p": 5,
+"f": "A dream is not a memory. Flashbacks show real events that already happened.",
+"tip": "Pick a real trigger instead.",
+"n": "memory",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"memory": {
+"q": "How do you tell the memory?",
+"h": "In a classical flashback the memory is the main story.",
+"o": [
+{
+"l": "A full memory: beginning, problem, climax",
+"t": "Amir had hammered the first plank. “Hold it still!” he had laughed. Hui Ling had held on tight, but the plank slipped and thudded to the ground. They had tried again and again, until the sky turned orange.\n\nAt last, the final plank clicked into place. They had climbed up together and watched the sun slide behind the rooftops.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory IS the main story, so it has its own problem and climax.",
+"tip": "Start with “had”, then use simple past.",
+"n": "back",
+"x": 1,
+"b": "length"
+},
+{
+"l": "One short sentence",
+"t": "She remembered building a treehouse with Amir.",
+"r": "b",
+"p": 5,
+"f": "That is an embedded flashback. Here the memory is the story.",
+"tip": "Tell the memory in several paragraphs.",
+"n": "memory",
+"x": 1,
+"rt": 1
+},
+{
+"l": "Lots of memories, a few lines each",
+"t": "She remembered the swing, then the slide, then the pond, then the shed.",
+"r": "o",
+"p": 10,
+"f": "Too scattered. No problem and no climax.",
+"tip": "Pick ONE memory and tell it fully.",
+"n": "back",
+"x": 1
+}
+],
+"k": "length"
+},
+"back": {
+"q": "How does the story return to the present?",
+"h": "Use the same trigger to return.",
+"o": [
+{
+"l": "The trigger brings them back",
+"t": "The branch creaked again, and Hui Ling was back in the garden. Amir had moved away, but the ladder was still strong. She smiled and began to climb.",
+"r": "g",
+"p": 25,
+"f": "Excellent! The same trigger returns us, and the ending shows what the memory means.",
+"tip": "Return with the same trigger you used to leave.",
+"n": "sum",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "Stay in the memory forever",
+"t": "Hui Ling kept building and building, and the story ended there.",
+"r": "b",
+"p": 0,
+"f": "The reader never comes back to the present.",
+"tip": "A classical flashback returns to the present in the last paragraph.",
+"n": "back",
+"x": 1,
+"rt": 1
+},
+{
+"l": "A sudden ending",
+"t": "Then Hui Ling went inside for tea.",
+"r": "o",
+"p": 10,
+"f": "Abrupt. It doesn’t link back to the memory.",
+"tip": "Tell us what the memory means to the character.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
+}
+}
+},
+"paint": {
+"type": "linked",
+"title": "The Spilled Paint",
+"ic": "🎨🖌️",
+"blurb": "Jia Hao spills paint on a classmate’s painting. A memory about a lie shapes what he does.",
+"wp": "Write the paragraph where Jia Hao stares at the painting and remembers the ruler (the link).",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Start with a situation that reminds the character of the past.",
+"o": [
+{
+"l": "Present trigger",
+"t": "Jia Hao’s elbow knocked the paint pot, and red splashed across Dev’s painting. His stomach dropped, because he had felt this before.",
+"r": "g",
+"p": 20,
+"f": "Great! A present trigger that connects to the past.",
+"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "The art room was bright and noisy, with paint pots on every table.",
+"r": "o",
+"p": 10,
+"f": "A bit slow, and nothing triggers a memory yet.",
+"tip": "Show the situation that makes the character remember.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Telling the decision",
+"t": "Jia Hao decided that telling the truth was best.",
+"r": "b",
+"p": 5,
+"f": "This ‘tells’ the ending before the memory teaches the lesson.",
+"tip": "Let the memory explain why the character acts later.",
+"n": "memory",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"memory": {
+"q": "What should the memory show?",
+"h": "What lesson should the character remember?",
+"o": [
+{
+"l": "A moment that taught a lesson",
+"t": "Last year, Jia Hao had broken Aisha’s ruler. He had hidden it and said nothing. When Aisha found out, she had looked at him sadly. “I wish you had told me,” she had said. She had never shared her pencils with him again, and he had never forgotten how heavy his lie had felt.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory shows a lesson.",
+"tip": "The memory should teach the character something.",
+"n": "link",
+"x": 1,
+"b": "content"
+},
+{
+"l": "A description",
+"t": "Last year, Jia Hao’s art class had a green door and a clay shelf. He had worn a blue apron.",
+"r": "o",
+"p": 10,
+"f": "Description, but no lesson to carry back to the present.",
+"tip": "Choose a moment that teaches something.",
+"n": "link",
+"x": 1
+},
+{
+"l": "An unrelated memory",
+"t": "Last year, Jia Hao had scored a goal and everyone had clapped.",
+"r": "b",
+"p": 5,
+"f": "It has nothing to do with the present situation.",
+"tip": "The memory must connect to what the character faces now.",
+"n": "memory",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"link": {
+"q": "How do you link back to the present?",
+"h": "Show how now is like then.",
+"o": [
+{
+"l": "Show the situation is similar",
+"t": "Now Jia Hao stared at the red streaks. He could cover it with a cloth, just as he had hidden the ruler. The same heavy feeling crept into his chest.",
+"r": "g",
+"p": 25,
+"f": "Excellent! The similar situation links the memory to now.",
+"tip": "Say or show how the present matches the past.",
+"n": "ending",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "Skip the link",
+"t": "Jia Hao looked at the painting.",
+"r": "o",
+"p": 5,
+"f": "The reader can’t see how the memory connects to now.",
+"tip": "Add a sentence that links past and present.",
+"n": "ending",
+"x": 1
+}
+],
+"k": "link"
+},
+"ending": {
+"q": "How does the character act at the end?",
+"h": "The lesson must change what the character does.",
+"o": [
+{
+"l": "Acts differently because of the lesson",
+"t": "Jia Hao took a deep breath and walked over to Dev. “I’m sorry. It was an accident, and I should have told you at once.” Dev blinked, then smiled. “Thanks for telling me. We can fix it together.”",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory changed how the character acts.",
+"tip": "In a linked flashback, the lesson changes what the character does.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Ignores the lesson",
+"t": "Jia Hao slid a cloth over the painting and walked away.",
+"r": "b",
+"p": 0,
+"f": "Then the memory taught nothing.",
+"tip": "Show the character using the lesson.",
+"n": "ending",
+"x": 1,
+"rt": 1
+},
+{
+"l": "Tells us the feeling",
+"t": "Jia Hao felt honest and proud.",
+"r": "o",
+"p": 10,
+"f": "This is telling, not showing.",
+"tip": "Show the new action that proves the character learned.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "link"
+}
+}
+},
+"lastlap": {
+"type": "embedded",
+"title": "The Last Lap",
+"ic": "🏃‍♀️🏁",
+"blurb": "Anya waits for the baton in the school relay. Where does a short memory of Dad’s training belong?",
+"wp": "Write 3–5 sentences: Anya remembers Dad’s words while she waits, then takes the baton.",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Which opening makes you want to read on?",
+"o": [
+{
+"l": "Action or tension",
+"t": "The starter gun cracked, and Anya’s heart thudded as she waited for the baton.",
+"r": "g",
+"p": 20,
+"f": "Strong hook! It grabs the reader straight away.",
+"tip": "Starting with action makes readers want to read on.",
+"n": "build",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "It was sports day, and the sun shone brightly on the field.",
+"r": "o",
+"p": 10,
+"f": "A bit slow. Readers wait a while for something to happen.",
+"tip": "Try opening with action or tension.",
+"n": "build",
+"x": 1
+},
+{
+"l": "Character description",
+"t": "Anya was a nervous girl who wanted to win.",
+"r": "b",
+"p": 5,
+"f": "This ‘tells’ instead of ‘shows’.",
+"tip": "Let readers discover this from what the character does.",
+"n": "build",
+"x": 1
+}
+],
+"k": "hook"
+},
+"build": {
+"q": "What happens next, before the memory?",
+"h": "Build the tension in the present first.",
+"o": [
+{
+"l": "Build the tense moment",
+"t": "Her teammate Bella thundered round the bend, but they were in third place. Anya’s knees wobbled.",
+"r": "g",
+"p": 20,
+"f": "Good! Rising tension makes a memory feel needed.",
+"tip": "Build the moment first, then pause for the memory.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Drift off-topic",
+"t": "Anya looked at the sky and thought about lunch.",
+"r": "o",
+"p": 10,
+"f": "Off track. The tension drops.",
+"tip": "Keep the action moving towards the key moment.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Rush past it",
+"t": "The race was over before Anya knew it.",
+"r": "b",
+"p": 5,
+"f": "This skips the key moment, so there is nothing to remember into.",
+"tip": "Don’t rush past the tense moment.",
+"n": "place",
+"x": 1
+}
+],
+"k": "hook"
+},
+"place": {
+"q": "Where should the flashback go?",
+"h": "Pick the moment when the character feels the most.",
+"o": [
+{
+"l": "While she waits, knees wobbling",
+"t": "",
+"r": "g",
+"p": 0,
+"f": "Yes! This emotional moment is the perfect trigger.",
+"tip": "Now choose how long the flashback should be.",
+"n": "len",
+"b": "placer",
+"pl": "now"
+},
+{
+"l": "Right at the start, before anything happens",
+"t": "",
+"r": "o",
+"p": 10,
+"f": "Too early. We don’t feel the tension yet, so the memory has little impact.",
+"tip": "Place it where the feeling is strongest.",
+"n": "len",
+"pl": "start"
+},
+{
+"l": "At the end, after the story is over",
+"t": "",
+"r": "o",
+"p": 10,
+"f": "Too late. The action is finished, so this is a reflection, not an embedded flashback.",
+"tip": "Embedded flashbacks work DURING the action.",
+"n": "len",
+"pl": "end"
+},
+{
+"l": "No flashback",
+"t": "",
+"r": "o",
+"p": 5,
+"f": "The story works, but we don’t know WHY the character feels this way.",
+"tip": "A short flashback adds depth.",
+"n": "ret",
+"pl": "none"
+}
+],
+"k": "placement"
+},
+"len": {
+"q": "How long should the flashback be?",
+"h": "Embedded flashbacks are short: 1–2 paragraphs.",
+"o": [
+{
+"l": "Very brief (2–3 sentences)",
+"t": "Anya remembered Dad at the park, saying, “Finishing matters more than winning.” She had never forgotten it.",
+"r": "g",
+"p": 25,
+"f": "Excellent! Just enough to explain, and the story flows on.",
+"tip": "Short and purposeful is the embedded way.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "One paragraph",
+"t": "Last spring, Dad had timed her laps at the park. She had tripped and scraped her knee, and she had wanted to quit. “Finishing matters more than winning,” Dad had said, helping her up. She had finished the lap, limping.",
+"r": "g",
+"p": 20,
+"f": "Good! Perhaps a little long, but it works.",
+"tip": "One paragraph is the most you need.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "Several paragraphs",
+"t": "Last spring, Dad had taken her to the park every evening…\n\n(…more paragraphs about shoes, rain, bandages and medals…)",
+"r": "b",
+"p": 5,
+"f": "Too long! We forgot the present story. This looks like a CLASSICAL flashback.",
+"tip": "Keep an embedded flashback to 1–2 paragraphs.",
+"n": "len",
+"x": 1,
+"rt": 1,
+"nt": 1
+}
+],
+"k": "length"
+},
+"content": {
+"q": "What should the flashback say?",
+"h": "Explain WHY the character feels this way.",
+"o": [
+{
+"l": "A matching moment from the past",
+"t": "Anya remembered the evening she had fallen at the park, her knee stinging. Dad had helped her up. “Finishing matters more than winning,” he had said.",
+"r": "g",
+"p": 30,
+"f": "Excellent! It matches the present moment and explains the feeling.",
+"tip": "This is a perfect strategic use of an embedded flashback!",
+"n": "ret",
+"x": 1,
+"b": "content",
+"fl": 1
+},
+{
+"l": "A description",
+"t": "Anya remembered the park. It had tall trees, a muddy path and a green bench.",
+"r": "o",
+"p": 5,
+"f": "Weak. It describes, but doesn’t explain why this moment matters.",
+"tip": "Explain motivations or make a meaningful parallel.",
+"n": "ret",
+"x": 1,
+"fl": 1
+},
+{
+"l": "General facts",
+"t": "Anya remembered running tips. Breathe in, breathe out, swing your arms.",
+"r": "b",
+"p": 0,
+"f": "Not a flashback! It is general information, not a specific memory.",
+"tip": "A flashback must show a specific moment from the past.",
+"n": "content",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"ret": {
+"q": "How do you get back to the present?",
+"h": "Get back to the present action quickly.",
+"o": [
+{
+"l": "Return smoothly to the action",
+"t": "Anya blinked. Bella’s hand was stretched out, the baton shining. Anya gripped it and ran.",
+"r": "g",
+"p": 25,
+"f": "Smooth! We are straight back in the present action.",
+"tip": "Return to the moment you left.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Stay in the memory",
+"t": "Anya stayed at the park with Dad and forgot the race entirely.",
+"r": "b",
+"p": 0,
+"f": "We forgot the present story. An embedded flashback is a brief pause.",
+"tip": "Always come back.",
+"n": "ret",
+"x": 1,
+"rt": 1
+},
+{
+"l": "End abruptly",
+"t": "Then the race was over.",
+"r": "o",
+"p": 10,
+"f": "Too abrupt. Show the character returning to the moment.",
+"tip": "Link the memory to what happens next.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
+}
+}
+},
+"wallet": {
+"type": "embedded",
+"title": "The Wallet",
+"ic": "👛🚇",
+"blurb": "Kai finds a full wallet on the MRT. Where should the memory of Ah Ma go?",
+"wp": "Write 3–5 sentences: Kai remembers Ah Ma at the hawker stall, then decides what to do.",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Which opening makes you want to read on?",
+"o": [
+{
+"l": "Action or tension",
+"t": "A brown wallet lay on the empty MRT seat, bulging with notes.",
+"r": "g",
+"p": 20,
+"f": "Strong hook! It grabs the reader straight away.",
+"tip": "Starting with action makes readers want to read on.",
+"n": "build",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "The MRT was crowded that afternoon as Kai travelled home from school.",
+"r": "o",
+"p": 10,
+"f": "A bit slow. Readers wait a while for something to happen.",
+"tip": "Try opening with action or tension.",
+"n": "build",
+"x": 1
+},
+{
+"l": "Character description",
+"t": "Kai was an honest boy.",
+"r": "b",
+"p": 5,
+"f": "This ‘tells’ instead of ‘shows’.",
+"tip": "Let readers discover this from what the character does.",
+"n": "build",
+"x": 1
+}
+],
+"k": "hook"
+},
+"build": {
+"q": "What happens next, before the memory?",
+"h": "Build the tension in the present first.",
+"o": [
+{
+"l": "Build the tense moment",
+"t": "Kai’s heart thumped. Nobody was watching. He could buy the football he wanted.",
+"r": "g",
+"p": 20,
+"f": "Good! Rising tension makes a memory feel needed.",
+"tip": "Build the moment first, then pause for the memory.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Drift off-topic",
+"t": "Kai counted the stations until his stop.",
+"r": "o",
+"p": 10,
+"f": "Off track. The tension drops.",
+"tip": "Keep the action moving towards the key moment.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Rush past it",
+"t": "Kai picked up the wallet and the doors closed.",
+"r": "b",
+"p": 5,
+"f": "This skips the key moment, so there is nothing to remember into.",
+"tip": "Don’t rush past the tense moment.",
+"n": "place",
+"x": 1
+}
+],
+"k": "hook"
+},
+"place": {
+"q": "Where should the flashback go?",
+"h": "Pick the moment when the character feels the most.",
+"o": [
+{
+"l": "At the moment he is tempted",
+"t": "",
+"r": "g",
+"p": 0,
+"f": "Yes! This emotional moment is the perfect trigger.",
+"tip": "Now choose how long the flashback should be.",
+"n": "len",
+"b": "placer",
+"pl": "now"
+},
+{
+"l": "Right at the start, before anything happens",
+"t": "",
+"r": "o",
+"p": 10,
+"f": "Too early. We don’t feel the tension yet, so the memory has little impact.",
+"tip": "Place it where the feeling is strongest.",
+"n": "len",
+"pl": "start"
+},
+{
+"l": "At the end, after the story is over",
+"t": "",
+"r": "o",
+"p": 10,
+"f": "Too late. The action is finished, so this is a reflection, not an embedded flashback.",
+"tip": "Embedded flashbacks work DURING the action.",
+"n": "len",
+"pl": "end"
+},
+{
+"l": "No flashback",
+"t": "",
+"r": "o",
+"p": 5,
+"f": "The story works, but we don’t know WHY the character feels this way.",
+"tip": "A short flashback adds depth.",
+"n": "ret",
+"pl": "none"
+}
+],
+"k": "placement"
+},
+"len": {
+"q": "How long should the flashback be?",
+"h": "Embedded flashbacks are short: 1–2 paragraphs.",
+"o": [
+{
+"l": "Very brief (2–3 sentences)",
+"t": "Kai remembered Ah Ma at the hawker stall, handing back extra change. “Honest hands sleep well,” she had said.",
+"r": "g",
+"p": 25,
+"f": "Excellent! Just enough to explain, and the story flows on.",
+"tip": "Short and purposeful is the embedded way.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "One paragraph",
+"t": "Last month, Ah Ma had been given too much change at the hawker stall. She had walked all the way back to return it. “Honest hands sleep well,” she had told Kai with a smile.",
+"r": "g",
+"p": 20,
+"f": "Good! Perhaps a little long, but it works.",
+"tip": "One paragraph is the most you need.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "Several paragraphs",
+"t": "Last month, Ah Ma had taken Kai to the hawker centre…\n\n(…more paragraphs about noodles, queues and the walk home…)",
+"r": "b",
+"p": 5,
+"f": "Too long! We forgot the present story. This looks like a CLASSICAL flashback.",
+"tip": "Keep an embedded flashback to 1–2 paragraphs.",
+"n": "len",
+"x": 1,
+"rt": 1,
+"nt": 1
+}
+],
+"k": "length"
+},
+"content": {
+"q": "What should the flashback say?",
+"h": "Explain WHY the character feels this way.",
+"o": [
+{
+"l": "A matching moment from the past",
+"t": "Kai remembered the day Ah Ma had walked back to return extra change. “Honest hands sleep well,” she had said.",
+"r": "g",
+"p": 30,
+"f": "Excellent! It matches the present moment and explains the feeling.",
+"tip": "This is a perfect strategic use of an embedded flashback!",
+"n": "ret",
+"x": 1,
+"b": "content",
+"fl": 1
+},
+{
+"l": "A description",
+"t": "Ah Ma had grey hair, a blue umbrella and a kind smile.",
+"r": "o",
+"p": 5,
+"f": "Weak. It describes, but doesn’t explain why this moment matters.",
+"tip": "Explain motivations or make a meaningful parallel.",
+"n": "ret",
+"x": 1,
+"fl": 1
+},
+{
+"l": "General facts",
+"t": "The MRT runs on electric trains with six carriages.",
+"r": "b",
+"p": 0,
+"f": "Not a flashback! It is general information, not a specific memory.",
+"tip": "A flashback must show a specific moment from the past.",
+"n": "content",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"ret": {
+"q": "How do you get back to the present?",
+"h": "Get back to the present action quickly.",
+"o": [
+{
+"l": "Return smoothly to the action",
+"t": "Kai blinked. The train slowed at his stop. He tucked the wallet under his arm and hurried to the station office.",
+"r": "g",
+"p": 25,
+"f": "Smooth! We are straight back in the present action.",
+"tip": "Return to the moment you left.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Stay in the memory",
+"t": "Kai stayed at the hawker stall with Ah Ma and forgot the wallet.",
+"r": "b",
+"p": 0,
+"f": "We forgot the present story. An embedded flashback is a brief pause.",
+"tip": "Always come back.",
+"n": "ret",
+"x": 1,
+"rt": 1
+},
+{
+"l": "End abruptly",
+"t": "Then Kai got off the train.",
+"r": "o",
+"p": 10,
+"f": "Too abrupt. Show the character returning to the moment.",
+"tip": "Link the memory to what happens next.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
+}
+}
+},
+"recital": {
+"type": "embedded",
+"title": "The Recital",
+"ic": "🎻🎭",
+"blurb": "Lena freezes on stage before her violin solo. A brief memory could give her courage.",
+"wp": "Write 3–5 sentences: Lena remembers her brother Jun’s cheer, then plays the first note.",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Which opening makes you want to read on?",
+"o": [
+{
+"l": "Action or tension",
+"t": "Lena’s fingers trembled on the violin as the curtain rose.",
+"r": "g",
+"p": 20,
+"f": "Strong hook! It grabs the reader straight away.",
+"tip": "Starting with action makes readers want to read on.",
+"n": "build",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "The school hall was large, with red curtains and rows of wooden chairs.",
+"r": "o",
+"p": 10,
+"f": "A bit slow. Readers wait a while for something to happen.",
+"tip": "Try opening with action or tension.",
+"n": "build",
+"x": 1
+},
+{
+"l": "Character description",
+"t": "Lena was a shy girl who loved music.",
+"r": "b",
+"p": 5,
+"f": "This ‘tells’ instead of ‘shows’.",
+"tip": "Let readers discover this from what the character does.",
+"n": "build",
+"x": 1
+}
+],
+"k": "hook"
+},
+"build": {
+"q": "What happens next, before the memory?",
+"h": "Build the tension in the present first.",
+"o": [
+{
+"l": "Build the tense moment",
+"t": "The hall fell silent. Hundreds of faces stared up at her, and her mouth went dry.",
+"r": "g",
+"p": 20,
+"f": "Good! Rising tension makes a memory feel needed.",
+"tip": "Build the moment first, then pause for the memory.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Drift off-topic",
+"t": "Lena counted the lights on the ceiling.",
+"r": "o",
+"p": 10,
+"f": "Off track. The tension drops.",
+"tip": "Keep the action moving towards the key moment.",
+"n": "place",
+"x": 1
+},
+{
+"l": "Rush past it",
+"t": "The music was over before Lena knew it.",
+"r": "b",
+"p": 5,
+"f": "This skips the key moment, so there is nothing to remember into.",
+"tip": "Don’t rush past the tense moment.",
+"n": "place",
+"x": 1
+}
+],
+"k": "hook"
+},
+"place": {
+"q": "Where should the flashback go?",
+"h": "Pick the moment when the character feels the most.",
+"o": [
+{
+"l": "As she freezes before the first note",
+"t": "",
+"r": "g",
+"p": 0,
+"f": "Yes! This emotional moment is the perfect trigger.",
+"tip": "Now choose how long the flashback should be.",
+"n": "len",
+"b": "placer",
+"pl": "now"
+},
+{
+"l": "Right at the start, before anything happens",
+"t": "",
+"r": "o",
+"p": 10,
+"f": "Too early. We don’t feel the tension yet, so the memory has little impact.",
+"tip": "Place it where the feeling is strongest.",
+"n": "len",
+"pl": "start"
+},
+{
+"l": "At the end, after the story is over",
+"t": "",
+"r": "o",
+"p": 10,
+"f": "Too late. The action is finished, so this is a reflection, not an embedded flashback.",
+"tip": "Embedded flashbacks work DURING the action.",
+"n": "len",
+"pl": "end"
+},
+{
+"l": "No flashback",
+"t": "",
+"r": "o",
+"p": 5,
+"f": "The story works, but we don’t know WHY the character feels this way.",
+"tip": "A short flashback adds depth.",
+"n": "ret",
+"pl": "none"
+}
+],
+"k": "placement"
+},
+"len": {
+"q": "How long should the flashback be?",
+"h": "Embedded flashbacks are short: 1–2 paragraphs.",
+"o": [
+{
+"l": "Very brief (2–3 sentences)",
+"t": "Lena remembered Jun cheering after her worst practice. “Wrong notes are just steps to the right ones,” he had said.",
+"r": "g",
+"p": 25,
+"f": "Excellent! Just enough to explain, and the story flows on.",
+"tip": "Short and purposeful is the embedded way.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "One paragraph",
+"t": "Last week, Lena had squeaked a terrible note in practice and nearly cried. Jun had clapped anyway. “Wrong notes are just steps to the right ones,” he had said, grinning.",
+"r": "g",
+"p": 20,
+"f": "Good! Perhaps a little long, but it works.",
+"tip": "One paragraph is the most you need.",
+"n": "content",
+"x": 1,
+"b": "length",
+"nt": 1
+},
+{
+"l": "Several paragraphs",
+"t": "Last week, Lena had practised every evening…\n\n(…more paragraphs about scales, sore fingers and snacks…)",
+"r": "b",
+"p": 5,
+"f": "Too long! We forgot the present story. This looks like a CLASSICAL flashback.",
+"tip": "Keep an embedded flashback to 1–2 paragraphs.",
+"n": "len",
+"x": 1,
+"rt": 1,
+"nt": 1
+}
+],
+"k": "length"
+},
+"content": {
+"q": "What should the flashback say?",
+"h": "Explain WHY the character feels this way.",
+"o": [
+{
+"l": "A matching moment from the past",
+"t": "Lena remembered the practice when she had squeaked a note and Jun had clapped anyway. “Wrong notes are just steps to the right ones,” he had said.",
+"r": "g",
+"p": 30,
+"f": "Excellent! It matches the present moment and explains the feeling.",
+"tip": "This is a perfect strategic use of an embedded flashback!",
+"n": "ret",
+"x": 1,
+"b": "content",
+"fl": 1
+},
+{
+"l": "A description",
+"t": "Jun had spiky hair, a loud laugh and a green hoodie.",
+"r": "o",
+"p": 5,
+"f": "Weak. It describes, but doesn’t explain why this moment matters.",
+"tip": "Explain motivations or make a meaningful parallel.",
+"n": "ret",
+"x": 1,
+"fl": 1
+},
+{
+"l": "General facts",
+"t": "Violins have four strings and are played with a bow.",
+"r": "b",
+"p": 0,
+"f": "Not a flashback! It is general information, not a specific memory.",
+"tip": "A flashback must show a specific moment from the past.",
+"n": "content",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"ret": {
+"q": "How do you get back to the present?",
+"h": "Get back to the present action quickly.",
+"o": [
+{
+"l": "Return smoothly to the action",
+"t": "Lena blinked. She drew a deep breath, lifted her bow and played the first note.",
+"r": "g",
+"p": 25,
+"f": "Smooth! We are straight back in the present action.",
+"tip": "Return to the moment you left.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Stay in the memory",
+"t": "Lena stayed in the kitchen with Jun and forgot the audience.",
+"r": "b",
+"p": 0,
+"f": "We forgot the present story. An embedded flashback is a brief pause.",
+"tip": "Always come back.",
+"n": "ret",
+"x": 1,
+"rt": 1
+},
+{
+"l": "End abruptly",
+"t": "Then the recital ended.",
+"r": "o",
+"p": 10,
+"f": "Too abrupt. Show the character returning to the moment.",
+"tip": "Link the memory to what happens next.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
+}
+}
+},
+"hardsum": {
+"type": "linked",
+"title": "The Hard Sum",
+"ic": "➗✏️",
+"blurb": "Priya wants to give up on her fractions homework. A memory about learning to swim gives her a lesson.",
+"wp": "Write the paragraph where Priya picks up her pencil again because of the memory.",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Start with a situation that reminds the character of the past.",
+"o": [
+{
+"l": "Present trigger",
+"t": "Priya threw her pencil down. The fractions were impossible, and she wanted to quit. She knew this feeling.",
+"r": "g",
+"p": 20,
+"f": "Great! A present trigger that connects to the past.",
+"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "The kitchen table was covered in books and rubber shavings.",
+"r": "o",
+"p": 10,
+"f": "A bit slow, and nothing triggers a memory yet.",
+"tip": "Show the situation that makes the character remember.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Telling the decision",
+"t": "Priya decided that she would never give up.",
+"r": "b",
+"p": 5,
+"f": "This ‘tells’ the ending before the memory teaches the lesson.",
+"tip": "Let the memory explain why the character acts later.",
+"n": "memory",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"memory": {
+"q": "What should the memory show?",
+"h": "What lesson should the character remember?",
+"o": [
+{
+"l": "A moment that taught a lesson",
+"t": "Last year, Priya had been scared to swim. She had gripped the pool wall, sure she would sink. “Every try makes you stronger,” Coach Lim had said. Priya had kicked again and again, and one day she had floated.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory shows a lesson.",
+"tip": "The memory should teach the character something.",
+"n": "link",
+"x": 1,
+"b": "content"
+},
+{
+"l": "A description",
+"t": "Last year, the pool had been blue and loud. Priya had worn a red swimming cap.",
+"r": "o",
+"p": 10,
+"f": "Description, but no lesson to carry back to the present.",
+"tip": "Choose a moment that teaches something.",
+"n": "link",
+"x": 1
+},
+{
+"l": "An unrelated memory",
+"t": "Last year, Priya had won a spelling bee and everyone had clapped.",
+"r": "b",
+"p": 5,
+"f": "It has nothing to do with the present situation.",
+"tip": "The memory must connect to what the character faces now.",
+"n": "memory",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"link": {
+"q": "How do you link back to the present?",
+"h": "Show how now is like then.",
+"o": [
+{
+"l": "Show the situation is similar",
+"t": "Priya looked at the page. It felt like gripping the pool wall all over again, scared she would sink.",
+"r": "g",
+"p": 25,
+"f": "Excellent! The similar situation links the memory to now.",
+"tip": "Say or show how the present matches the past.",
+"n": "ending",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "Skip the link",
+"t": "Priya looked at the page.",
+"r": "o",
+"p": 5,
+"f": "The reader can’t see how the memory connects to now.",
+"tip": "Add a sentence that links past and present.",
+"n": "ending",
+"x": 1
+}
+],
+"k": "link"
+},
+"ending": {
+"q": "How does the character act at the end?",
+"h": "The lesson must change what the character does.",
+"o": [
+{
+"l": "Acts differently because of the lesson",
+"t": "Priya took a deep breath and picked up her pencil. “Every try makes you stronger,” she whispered. She tried the first step. Then the next. At last, the answer appeared.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory changed how the character acts.",
+"tip": "In a linked flashback, the lesson changes what the character does.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Ignores the lesson",
+"t": "Priya shut the book and went to watch TV.",
+"r": "b",
+"p": 0,
+"f": "Then the memory taught nothing.",
+"tip": "Show the character using the lesson.",
+"n": "ending",
+"x": 1,
+"rt": 1
+},
+{
+"l": "Tells us the feeling",
+"t": "Priya felt determined and strong.",
+"r": "o",
+"p": 10,
+"f": "This is telling, not showing.",
+"tip": "Show the new action that proves the character learned.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "link"
+}
+}
+},
+"card": {
+"type": "linked",
+"title": "The Torn Card",
+"ic": "💌😢",
+"blurb": "Kiara’s birthday card is torn by accident. A memory about a forgiving friend helps her choose.",
+"wp": "Write the paragraph where Kiara sees Hana’s tears and remembers last year (the link).",
+"n": {
+"open": {
+"q": "How should the story begin?",
+"h": "Start with a situation that reminds the character of the past.",
+"o": [
+{
+"l": "Present trigger",
+"t": "Kiara stared at her birthday card, split in two. Hana’s face went pale, and Kiara’s cheeks burned. She had been here before.",
+"r": "g",
+"p": 20,
+"f": "Great! A present trigger that connects to the past.",
+"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Setting description",
+"t": "The classroom was bright, and everyone was packing their bags.",
+"r": "o",
+"p": 10,
+"f": "A bit slow, and nothing triggers a memory yet.",
+"tip": "Show the situation that makes the character remember.",
+"n": "memory",
+"x": 1
+},
+{
+"l": "Telling the decision",
+"t": "Kiara decided to forgive Hana.",
+"r": "b",
+"p": 5,
+"f": "This ‘tells’ the ending before the memory teaches the lesson.",
+"tip": "Let the memory explain why the character acts later.",
+"n": "memory",
+"x": 1
+}
+],
+"k": "trigger"
+},
+"memory": {
+"q": "What should the memory show?",
+"h": "What lesson should the character remember?",
+"o": [
+{
+"l": "A moment that taught a lesson",
+"t": "Last year, Kiara had snapped Mei’s favourite pencil by accident. She had waited for Mei to shout. Instead, Mei had said, “It’s okay. Accidents happen.” That kindness had made Kiara feel safe, and she had never forgotten it.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory shows a lesson.",
+"tip": "The memory should teach the character something.",
+"n": "link",
+"x": 1,
+"b": "content"
+},
+{
+"l": "A description",
+"t": "Last year, Mei’s pencil had been yellow with a rubber shaped like a star.",
+"r": "o",
+"p": 10,
+"f": "Description, but no lesson to carry back to the present.",
+"tip": "Choose a moment that teaches something.",
+"n": "link",
+"x": 1
+},
+{
+"l": "An unrelated memory",
+"t": "Last year, Kiara had gone to the zoo and seen a giraffe.",
+"r": "b",
+"p": 5,
+"f": "It has nothing to do with the present situation.",
+"tip": "The memory must connect to what the character faces now.",
+"n": "memory",
+"x": 1,
+"rt": 1
+}
+],
+"k": "explain"
+},
+"link": {
+"q": "How do you link back to the present?",
+"h": "Show how now is like then.",
+"o": [
+{
+"l": "Show the situation is similar",
+"t": "Now Hana’s eyes shone with tears, just as Kiara’s once had. Kiara knew exactly how scared she felt.",
+"r": "g",
+"p": 25,
+"f": "Excellent! The similar situation links the memory to now.",
+"tip": "Say or show how the present matches the past.",
+"n": "ending",
+"x": 1,
+"b": "placer"
+},
+{
+"l": "Skip the link",
+"t": "Kiara looked at Hana.",
+"r": "o",
+"p": 5,
+"f": "The reader can’t see how the memory connects to now.",
+"tip": "Add a sentence that links past and present.",
+"n": "ending",
+"x": 1
+}
+],
+"k": "link"
+},
+"ending": {
+"q": "How does the character act at the end?",
+"h": "The lesson must change what the character does.",
+"o": [
+{
+"l": "Acts differently because of the lesson",
+"t": "Kiara took a breath and smiled. “It’s okay. Accidents happen,” she said. “Let’s stick it back together.” Hana wiped her eyes and nodded.",
+"r": "g",
+"p": 30,
+"f": "Excellent! The memory changed how the character acts.",
+"tip": "In a linked flashback, the lesson changes what the character does.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Ignores the lesson",
+"t": "Kiara snatched the pieces and stormed off.",
+"r": "b",
+"p": 0,
+"f": "Then the memory taught nothing.",
+"tip": "Show the character using the lesson.",
+"n": "ending",
+"x": 1,
+"rt": 1
+},
+{
+"l": "Tells us the feeling",
+"t": "Kiara felt forgiving and calm.",
+"r": "o",
+"p": 10,
+"f": "This is telling, not showing.",
+"tip": "Show the new action that proves the character learned.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "link"
+}
+}
+}
+},
+"sort": [
+{
+"x": "Dev opened the old toy box. A wooden train rolled out, and suddenly he was six again, racing it down the hallway with Grandpa. [Four paragraphs tell the whole race.] The train hit the wall, and Dev was back in the attic, smiling.",
+"a": "classical",
+"e": "The memory is the main story. We leave the present and return at the end."
+},
+{
+"x": "Ali saw a girl crying alone. [Memory: last year the same thing had happened to him, until a classmate sat beside him.] Now Ali sat beside her and said, “I’m here.”",
+"a": "linked",
+"e": "The memory teaches a lesson, and Ali acts differently in a similar situation."
+},
+{
+"x": "The goalkeeper dived and missed. Joel’s heart sank. Last week, Dad had said, “Everyone drops the ball sometimes.” Joel stood up and cheered the team on.",
+"a": "embedded",
+"e": "A short memory explains the feeling, then the present story carries on."
+},
+{
+"x": "Sue smelled the sea air at the harbour and was suddenly seven again, on Dad’s fishing boat. [Four paragraphs: the storm, the big fish, Dad’s laugh.] The ferry horn sounded, and Sue stepped onto the pier.",
+"a": "classical",
+"e": "Most of the story takes place in the memory."
+},
+{
+"x": "Pia refused to practise piano. [Memory: she had quit swimming once and missed the medal.] Now Pia opened the lid and played, even when it was hard.",
+"a": "linked",
+"e": "The lesson from the memory changes what Pia does now."
+},
+{
+"x": "Mia opened the cage door slowly. She remembered Coco, her old hamster, who had trusted only her hands. Mia held out her palm for the new hamster.",
+"a": "embedded",
+"e": "A brief memory explains why Mia is so gentle. The present action continues."
+},
+{
+"x": "The school bell rang, and Tomas was in Year One again, on his very first day. [Most of the story tells that morning: crying at the gate, a kind teacher, a new friend.] The bell rang again, and Tomas walked into class.",
+"a": "classical",
+"e": "The story starts and ends in the present, but the memory is the main part."
+},
+{
+"x": "Hock’s team lost. [Memory: last year he had shouted at his team, and nobody wanted to play with him.] Now Hock smiled and said, “Good try, everyone.”",
+"a": "linked",
+"e": "A lesson from the past leads to different behaviour now."
+},
+{
+"x": "Raj’s hand shook as he tore the envelope. He had worked all night on the project last week, sticky notes everywhere. He pulled out the paper: an A!",
+"a": "embedded",
+"e": "A tiny memory explains why this moment matters, and then the story goes on."
+}
+],
+"skills": {
+"hook": {
+"n": "Openings & Tension",
+"ic": "🎣"
+},
+"trigger": {
+"n": "Triggers",
+"ic": "🔔"
+},
+"placement": {
+"n": "Placement",
+"ic": "📍"
+},
+"length": {
+"n": "Length & Scope",
+"ic": "📏"
+},
+"explain": {
+"n": "Explain, Don’t Describe",
+"ic": "💡"
+},
+"link": {
+"n": "Linking Past & Present",
+"ic": "🔗"
+},
+"return": {
+"n": "Returning",
+"ic": "↩️"
+},
+"choose": {
+"n": "Choosing the Right Type",
+"ic": "🧭"
+},
+"fix": {
+"n": "Fixing Flawed Flashbacks",
+"ic": "🔧"
+}
+}
+}

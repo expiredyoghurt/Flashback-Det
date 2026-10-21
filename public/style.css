@@ -29,3 +29,7 @@ button.chip{width:auto;display:inline-block;background:var(--o);color:var(--ink)
 .rank{margin-top:8px}.xpbar{height:10px;background:var(--ln);border-radius:99px;overflow:hidden;flex:1;min-width:50px}.xpbar i{display:block;height:100%;background:var(--pri)}.sk{display:flex;gap:6px;align-items:center;font-size:.8rem;margin:3px 0}.sk span{flex:0 0 52%}.sk small{width:34px;text-align:right}
 .nudge{font-size:.85rem;color:var(--mut);min-height:1.2em;margin-bottom:4px}
 .pic{font-size:3.2rem;text-align:center;background:var(--bg);border-radius:14px;padding:12px;margin:8px 0}.fixme{border-left:5px solid var(--pri);padding-left:8px}
+.hint{color:var(--mut);font-size:.92rem;margin:6px 0}
+.row2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}.row2 input{flex:1;min-width:10rem}.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1.15em;letter-spacing:.12em;background:var(--g);padding:1px 8px;border-radius:6px}
+#sheet{display:none}.sheet{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.sc{border:2px dashed #888;border-radius:10px;padding:10px;break-inside:avoid;line-height:1.7;background:#fff;color:#111}.sc .big{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:1.3em;font-weight:bold;letter-spacing:.08em}
+@media print{body.printing .wrap{display:none}body.printing #sheet{display:block}body.printing{background:#fff}.no-print{display:none}}

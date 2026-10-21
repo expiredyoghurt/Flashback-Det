@@ -13,3 +13,21 @@ database_id = "d081d63e-ebcb-4304-8141-a80036a8f96a"
 # Workers AI (used by the optional AI helper; needs no API key)
 [ai]
 binding = "AI"
+
+# Sign-in throttles (per IP). Each namespace_id must be unique in your Cloudflare account.
+[[ratelimits]]
+name = "RL_LOGIN"
+namespace_id = "4301"
+simple = { limit = 15, period = 60 }
+
+[[ratelimits]]
+name = "RL_GUEST"
+namespace_id = "4302"
+simple = { limit = 6, period = 60 }
+
+# Old guest accounts (and what they did) are deleted every day at 03:00 Singapore time.
+[triggers]
+crons = ["0 19 * * *"]
+
+[vars]
+GUEST_RETENTION_DAYS = "30"

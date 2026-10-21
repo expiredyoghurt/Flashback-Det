@@ -1,13 +1,13 @@
-// Flashback Detectives v1.3 API. Static files come from ./public (Workers Assets).
-// Secrets: admin_user, admin_password (defaults admin123 / password123 if unset).
+// Flashback Detectives v2.0 API. Static files come from ./public (Workers Assets).
+// Sign-in and class management live in ./login.js (class codes, signed tokens); the one-off v1.9 -> v2.0 upgrade is ./migrate.js.
+// Secrets: teacher_user + teacher_password (or the older admin_user + admin_password). There are no default logins.
 import D from './stories.json';
 import { check, LABELS, roleTexts, RULE_ROLES } from './checker.js';
 import TR from './transfer.json';
 import { judge, providersConfigured, RULE_TEXT } from './ai.js';
-const J = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { 'content-type': 'application/json' } });
+import { HttpError, J, cl, hx, pw, sameStr as same, bearer, pupilLogin, pupilGuest, authPupil, staffLogin, staffAuth, teacherToken, classRoute, purgeGuests, adminCreds } from './login.js';
+import { ensureSchema } from './migrate.js';
 const sha = async s => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)))].map(b => b.toString(16).padStart(2, '0')).join('');
-const same = (a, b) => { if (a.length !== b.length) return false; let r = 0; for (let i = 0; i < a.length; i++) r |= a.charCodeAt(i) ^ b.charCodeAt(i); return r === 0; };
-const cl = (s, n) => String(s ?? '').trim().slice(0, n);
 const pubNode = (S, k) => { const n = S.n[k]; return { id: k, q: n.q, h: n.h, o: n.o.map((o, i) => ({ i, l: o.l, t: o.x ? o.t : '' })) }; };
 const RANKS = [{ n: 'Rookie', ic: '🔎', min: 0 }, { n: 'Sleuth', ic: '🕵️', min: 100 }, { n: 'Inspector', ic: '🎖️', min: 350 }, { n: 'Chief', ic: '🏅', min: 800 }];
 const rankOf = xp => { let i = 0; RANKS.forEach((r, k) => { if (xp >= r.min) i = k; }); const nx = RANKS[i + 1]; return { n: RANKS[i].n, ic: RANKS[i].ic, min: RANKS[i].min, next: nx ? nx.min : null, nextName: nx ? nx.n : null }; };
@@ -53,72 +53,36 @@ async function backfill(DB, pid) {
 }
 const TYPES = Object.fromEntries(Object.entries(D.types).map(([k, v]) => [k, { kind: v.kind, checks: v.checks, rq: v.rq, scaf: v.scaf, frame: v.frame, nudge: v.nudge, map: v.map }]));
 
-async function auth(req, env, role) {
-  const t = (req.headers.get('authorization') || '').replace('Bearer ', '');
-  if (!t) return null;
-  return env.DB.prepare("SELECT * FROM sessions WHERE token=? AND role=? AND created>datetime('now',?)").bind(t, role, role === 'admin' ? '-4 hours' : '-12 hours').first();
-}
-async function mk(env, role, pid) {
-  await env.DB.prepare("DELETE FROM sessions WHERE created<datetime('now','-1 day')").run();
-  const token = crypto.randomUUID() + crypto.randomUUID();
-  await env.DB.prepare('INSERT INTO sessions(token,role,pupil_id) VALUES(?,?,?)').bind(token, role, pid).run();
-  return token;
-}
-// Rate limiting: 5 bad logins per username, 40 per IP, 8 per IP for teacher login, in 10 minutes
-async function blocked(env, k, max) { const r = await env.DB.prepare('SELECT * FROM fails WHERE k=?').bind(k).first(); return !!r && Date.now() - r.ts < 6e5 && r.n >= max; }
-async function fail(env, k) { const r = await env.DB.prepare('SELECT * FROM fails WHERE k=?').bind(k).first(); const n = r && Date.now() - r.ts < 6e5 ? r.n + 1 : 1; await env.DB.prepare('INSERT OR REPLACE INTO fails(k,n,ts) VALUES(?,?,?)').bind(k, n, Date.now()).run(); }
-const clear = (env, k) => env.DB.prepare('DELETE FROM fails WHERE k=?').bind(k).run();
 async function getRun(env, s, id) { const r = await env.DB.prepare('SELECT * FROM runs WHERE id=? AND pupil_id=? AND done=0').bind(id | 0, s.pupil_id).first(); if (r) r.st = JSON.parse(r.state); return r; }
-const hx = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
-async function pw(p, salt) { const k = await crypto.subtle.importKey('raw', new TextEncoder().encode(p), 'PBKDF2', false, ['deriveBits']); return hx(await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: new TextEncoder().encode(salt), iterations: 100000 }, k, 256)); }
-const staff = async (req, env) => { const t = (req.headers.get('authorization') || '').replace('Bearer ', ''); return t ? env.DB.prepare("SELECT * FROM sessions WHERE token=? AND role IN ('admin','teacher') AND created>datetime('now','-4 hours')").bind(t).first() : null; };
 // Shows the pupil's story with the flashback where THEY placed it
 const view = st => { const a = st.story.map(t => ({ t })); if (st.fb) { const f = { t: st.fb, fb: 1 }; if (st.pl === 'start') a.unshift(f); else if (st.pl === 'end') a.push(f); else a.splice(st.fbAt, 0, f); } return a; };
 const saveRun = (env, r) => env.DB.prepare('UPDATE runs SET state=? WHERE id=?').bind(JSON.stringify(r.st), r.id).run();
 
 export default {
+  // daily clean-up of old guest accounts (cron in wrangler.toml)
+  async scheduled(event, env, ctx) { ctx.waitUntil(purgeGuests(env)); },
   async fetch(req, env) {
     const url = new URL(req.url), path = url.pathname, m = req.method, ip = req.headers.get('cf-connecting-ip') || 'x';
     if (!path.startsWith('/api/')) return env.ASSETS ? env.ASSETS.fetch(req) : new Response('Not found', { status: 404 });
-    const b = m === 'POST' ? await req.json().catch(() => ({})) : {};
+    const b = ['POST', 'PATCH', 'PUT'].includes(m) ? await req.json().catch(() => ({})) : {};
     const DB = env.DB;
     try {
-      if (m === 'POST' && path === '/api/register') {
-        const u = cl(b.username, 20).toLowerCase(), pin = cl(b.pin, 8);
-        if (!/^[a-z0-9_.-]{3,20}$/.test(u)) return J({ error: 'Username: 3-20 letters or numbers' }, 400);
-        if (!/^\d{4,8}$/.test(pin)) return J({ error: 'PIN must be 4-8 digits' }, 400);
-        if (await DB.prepare('SELECT 1 FROM pupils WHERE username=?').bind(u).first()) return J({ error: 'That name is taken' }, 409);
-        const r = await DB.prepare('INSERT INTO pupils(username,class,pin_hash) VALUES(?,?,?)').bind(u, cl(b.class, 20), await sha(u + ':' + pin)).run();
-        return J({ token: await mk(env, 'pupil', r.meta.last_row_id), username: u });
-      }
-      if (m === 'POST' && path === '/api/login') {
-        const u = cl(b.username, 20).toLowerCase();
-        if (await blocked(env, 'u:' + u, 5) || await blocked(env, 'i:' + ip, 40)) return J({ error: 'Too many tries. Wait 10 minutes.' }, 429);
-        const p = await DB.prepare('SELECT * FROM pupils WHERE username=?').bind(u).first();
-        if (!p || !same(p.pin_hash, await sha(u + ':' + cl(b.pin, 8)))) { await fail(env, 'u:' + u); await fail(env, 'i:' + ip); return J({ error: 'Wrong name or PIN' }, 401); }
-        await clear(env, 'u:' + u);
-        return J({ token: await mk(env, 'pupil', p.id), username: u });
-      }
-      if (m === 'POST' && path === '/api/admin/login') {
-        const un = cl(b.user, 30).toLowerCase();
-        if (await blocked(env, 'a:' + ip, 20) || await blocked(env, 'ua:' + un, 5)) return J({ error: 'Too many tries. Wait 10 minutes.' }, 429);
-        const au = env.admin_user || 'admin123', ap = env.admin_password || 'password123';
-        if (same(await sha(cl(b.user, 100)), await sha(au)) && same(await sha(cl(b.password, 100)), await sha(ap))) {
-          await clear(env, 'ua:' + un); return J({ token: await mk(env, 'admin', null), role: 'admin', name: cl(b.user, 100) });
-        }
-        const t = await DB.prepare('SELECT * FROM teachers WHERE username=?').bind(un).first();
-        if (t && same(t.hash, await pw(cl(b.password, 100), t.salt))) { await clear(env, 'ua:' + un); return J({ token: await mk(env, 'teacher', t.id), role: 'teacher', name: t.username }); }
-        await fail(env, 'a:' + ip); await fail(env, 'ua:' + un);
-        return J({ error: 'Wrong teacher login' }, 401);
-      }
+      if (!DB) throw new HttpError(500, 'The database is not connected. Check the D1 binding.');
+      await ensureSchema(env); // upgrades a v1.9 database the first time (see migrate.js); does nothing otherwise
+      if (m === 'POST' && path === '/api/login') return await pupilLogin(req, env, b);
+      if (m === 'POST' && path === '/api/guest') return await pupilGuest(req, env);
+      if (m === 'POST' && path === '/api/admin/login') return await staffLogin(req, env, b);
       /* ---------- pupil ---------- */
       if (path.startsWith('/api/') && !path.startsWith('/api/admin/')) {
-        const s = await auth(req, env, 'pupil');
+        if (!adminCreds(env) && !env.session_secret) return J({ error: 'This app is not set up yet. Ask your teacher.' }, 503);
+        const s = await authPupil(env, bearer(req));
         if (!s) return J({ error: 'Please log in' }, 401);
         const pid = s.pupil_id;
-        const me = await DB.prepare('SELECT class FROM pupils WHERE id=?').bind(pid).first();
+        const me = { class_id: s.class_id };
+        // the AI helper sends pupil writing to outside providers: only for pupils in a class, never for guests
+        const aiForPupil = async () => { const a = await aiState(env); if (s.guest) a.on = false; return a; };
         if (m === 'GET' && path === '/api/stories') {
-          const a = await DB.prepare('SELECT story FROM assignments WHERE UPPER(TRIM(class))=UPPER(TRIM(?))').bind(me.class || '').all();
+          const a = me.class_id ? await DB.prepare('SELECT story FROM assignments WHERE class_id=?').bind(me.class_id).all() : { results: [] };
           return J({ types: TYPES, skills: D.skills, stories: Object.entries(D.stories).map(([id, s]) => ({ id, type: s.type, title: s.title, ic: s.ic, blurb: s.blurb })), assigned: a.results.map(x => x.story) });
         }
         if (m === 'GET' && path === '/api/me') {
@@ -132,7 +96,7 @@ export default {
           const so = await DB.prepare('SELECT MAX(score) s,MAX(total) t FROM sorts WHERE pupil_id=?').bind(pid).first();
           const skills = {}; (await DB.prepare(MASTERY_Q).bind(pid).all()).results.forEach(x => skills[x.skill] = [x.n, x.good]);
           const xp = (await DB.prepare('SELECT COALESCE(SUM(xp),0) x FROM xp_log WHERE pupil_id=?').bind(pid).first()).x;
-          return J({ completions: c, badges: bg, writings: w, sort: so, xp, rank: rankOf(xp), skills, next: recommend(skills, c) });
+          return J({ completions: c, badges: bg, writings: w, sort: so, xp, rank: rankOf(xp), skills, next: recommend(skills, c), pupil: { name: s.name, className: s.className, guest: s.guest } });
         }
         if (m === 'POST' && path === '/api/run/start') {
           const S = D.stories[b.story]; if (!S) return J({ error: 'Bad story' }, 400);
@@ -167,12 +131,12 @@ export default {
           const frameParts = () => { const T0 = D.types[S.type]; const parts = (Array.isArray(b.parts) ? b.parts : []).slice(0, T0.frame.length).map(x => cl(x, 1200)); return { T0, parts, P: roleTexts(T0.frame, parts) }; };
           const aiUsed = async () => (await DB.prepare("SELECT COUNT(*) n FROM ai_checks WHERE pupil_id=? AND source='pupil' AND ts>datetime('now','-1 day')").bind(pid).first()).n;
           if (path === '/api/run/check') {
-            const { T0, parts, P } = frameParts(), ck = await applyAI(check(S.type, parts, T0.frame), P, st.ai), ai = await aiState(env), used = ai.on ? await aiUsed() : 0;
+            const { T0, parts, P } = frameParts(), ck = await applyAI(check(S.type, parts, T0.frame), P, st.ai), ai = await aiForPupil(), used = ai.on ? await aiUsed() : 0;
             return J({ results: ck.results.map(x => ({ ...x, label: LABELS[x.id], can_ask: ai.on && !x.ok && !x.na && !!RULE_TEXT[x.id] && !/^Write something/.test(x.hint) })), passed: ck.passed, total: ck.total, ai: { on: ai.on, left: Math.max(0, ai.daily - used) } });
           }
           if (path === '/api/run/ai-check') {
             // Only for a rule the quick check marked as missing, and only for rules where wording varies (not "had" or length)
-            const ai = await aiState(env); if (!ai.on) return J({ error: 'The AI helper is turned off.' }, 403);
+            const ai = await aiForPupil(); if (!ai.on) return J({ error: 'The AI helper is turned off.' }, 403);
             const rule = cl(b.rule, 20); if (!RULE_TEXT[rule]) return J({ error: 'The AI helper cannot check that rule.' }, 400);
             const { T0, parts, P } = frameParts(), cr = check(S.type, parts, T0.frame).results.find(x => x.id === rule);
             if (!cr || cr.na) return J({ error: 'That rule is not part of this story.' }, 400);
@@ -254,32 +218,35 @@ export default {
         return J({ error: 'Not found' }, 404);
       }
       /* ---------- teacher ---------- */
-      const sa = await staff(req, env);
+      if (!adminCreds(env) && !env.session_secret) return J({ error: 'Teacher sign-in is not set up yet. Set the teacher_user and teacher_password secrets in Cloudflare.' }, 503);
+      const sa = await staffAuth(env, bearer(req));
       if (!sa) return J({ error: 'Teacher login required' }, 401);
       const su = sa.role === 'admin';
       const lab = (st, nd, i) => { try { return D.stories[st].n[nd].o[i].l; } catch (e) { return '?'; } };
       // Teachers only see the classes the super admin assigned to them (none by default)
       let cls = null;
-      if (!su) cls = (await DB.prepare('SELECT class FROM teacher_classes WHERE teacher_id=?').bind(sa.pupil_id).all()).results.map(x => x.class);
-      const sc = al => cls === null ? { q: '1', b: [] } : cls.length ? { q: `UPPER(TRIM(${al}.class)) IN (${cls.map(() => '?').join(',')})`, b: cls } : { q: '0', b: [] };
-      const okC = c => cls === null || cls.includes(String(c || '').trim().toUpperCase());
+      if (!su) cls = (await DB.prepare('SELECT class_id FROM teacher_classes WHERE teacher_id=?').bind(sa.pupil_id).all()).results.map(x => x.class_id);
+      const sc = al => cls === null ? { q: '1', b: [] } : cls.length ? { q: `${al}.class_id IN (${cls.map(() => '?').join(',')})`, b: cls } : { q: '0', b: [] };
+      const okC = c => cls === null || cls.includes(c);
       const all = async (q, ...a) => (await DB.prepare(q).bind(...a).all()).results;
-      const pupilOf = async u => { const p = await DB.prepare('SELECT id,username,class,created FROM pupils WHERE username=?').bind(cl(u, 20).toLowerCase()).first(); return p && okC(p.class) ? p : null; };
+      const pupilOf = async id => { const p = await DB.prepare('SELECT p.id,p.username,p.name,p.class_id,COALESCE(c.name,\'\') class FROM pupils p LEFT JOIN classes c ON c.id=p.class_id WHERE p.id=?').bind(id | 0).first(); return p && (p.class_id == null ? su : okC(p.class_id)) ? p : null; };
+      // classes: create, rename, archive, new code, delete; pupils: add from a list, edit, reset, delete (src/login.js)
+      { const r = await classRoute({ env, su, cls, tid: sa.pupil_id }, path.replace(/^\/api\/admin/, ''), m, b); if (r) return r; }
       const bf = async s => { const need = await all(`SELECT p.id FROM pupils p WHERE ${s.q} AND p.id NOT IN (SELECT pupil_id FROM skill_log) AND p.id NOT IN (SELECT pupil_id FROM xp_log) AND (EXISTS (SELECT 1 FROM picks WHERE pupil_id=p.id) OR EXISTS (SELECT 1 FROM completions WHERE pupil_id=p.id)) LIMIT 40`, ...s.b); for (const x of need) await backfill(DB, x.id); };
       if (m === 'GET' && path === '/api/admin/summary') {
         const s = sc('p');
         await bf(s);
-        const pupils0 = await all(`SELECT p.id,p.created,p.username,p.class,(SELECT COUNT(*) FROM picks WHERE pupil_id=p.id) npicks,
+        const pupils0 = await all(`SELECT p.id,p.created_at,p.username,p.name,p.class_id,COALESCE(cc.name,'') class,(SELECT COUNT(*) FROM picks WHERE pupil_id=p.id) npicks,
           (SELECT COUNT(DISTINCT story) FROM completions WHERE pupil_id=p.id) done,
           (SELECT COALESCE(SUM(m),0) FROM (SELECT MAX(points) m FROM completions WHERE pupil_id=p.id GROUP BY story)) points,
           (SELECT COUNT(*) FROM picks WHERE pupil_id=p.id AND tries>0) tries,
-          (SELECT MAX(ts) FROM picks WHERE pupil_id=p.id) last_active FROM pupils p WHERE ${s.q} ORDER BY p.class,p.username`, ...s.b);
+          (SELECT MAX(ts) FROM picks WHERE pupil_id=p.id) last_active FROM pupils p LEFT JOIN classes cc ON cc.id=p.class_id WHERE ${s.q} ORDER BY cc.name,p.username`, ...s.b);
         // v1.6: skill mastery (last 20 first tries per skill), XP/rank and rule-based at-risk flags
         const sk = await all('SELECT pupil_id,skill,COUNT(*) n,SUM(ok) good FROM (SELECT pupil_id,skill,ok,ROW_NUMBER() OVER (PARTITION BY pupil_id,skill ORDER BY id DESC) rn FROM skill_log) WHERE rn<=20 GROUP BY pupil_id,skill');
         const l50 = Object.fromEntries((await all('SELECT pupil_id,COUNT(*) n,SUM(ok) good FROM (SELECT pupil_id,ok,ROW_NUMBER() OVER (PARTITION BY pupil_id ORDER BY id DESC) rn FROM skill_log) WHERE rn<=50 GROUP BY pupil_id')).map(x => [x.pupil_id, x]));
         const xps = Object.fromEntries((await all('SELECT pupil_id,SUM(xp) xp FROM xp_log GROUP BY pupil_id')).map(x => [x.pupil_id, x.xp]));
         const stuck = await all("SELECT DISTINCT pupil_id,story,node FROM picks WHERE tries>=3 AND ts>datetime('now','-14 days')");
-        const now = Date.now(), tms = t => Date.parse(String(t).replace(' ', 'T') + 'Z');
+        const now = Date.now(), tms = t => Date.parse(String(t).replace(' ', 'T') + 'Z'); // picks.ts is a SQLite datetime string
         const pupils = pupils0.map(p => {
           const skills = {}; sk.filter(x => x.pupil_id === p.id).forEach(x => skills[x.skill] = [x.n, x.good]);
           const flags = [], a = l50[p.id];
@@ -287,17 +254,16 @@ export default {
           for (const [k, v] of Object.entries(skills)) if (v[0] >= 10 && v[1] / v[0] < 0.5) flags.push(`Weak skill: ${(D.skills[k] || {}).n || k} (${Math.round(100 * v[1] / v[0])}%)`);
           stuck.filter(x => x.pupil_id === p.id).forEach(x => flags.push(`Stuck: ${(D.stories[x.story] || {}).title || x.story}, step "${x.node}" (3+ retries)`));
           if (p.npicks && p.last_active && now - tms(p.last_active) > 14 * 864e5) flags.push('Inactive for 14+ days');
-          if (!p.npicks && now - tms(p.created) > 7 * 864e5) flags.push('Not started (account is over 7 days old)');
-          const xp = xps[p.id] || 0, { id, created, npicks, ...rest } = p;
+          if (!p.npicks && now - p.created_at > 7 * 864e5) flags.push('Not started (account is over 7 days old)');
+          const xp = xps[p.id] || 0, { created_at, npicks, ...rest } = p;
           return { ...rest, xp, rank: rankOf(xp).n, skills, flags };
         });
         const ch = (await all(`SELECT k.story,k.node,k.idx,k.r,COUNT(*) n,CAST(AVG(k.ms)/1000 AS INT) secs FROM picks k JOIN pupils p ON p.id=k.pupil_id WHERE ${s.q} GROUP BY k.story,k.node,k.idx,k.r`, ...s.b)).map(x => ({ ...x, choice: lab(x.story, x.node, x.idx) }));
-        const asg = (await all('SELECT class,story FROM assignments')).filter(x => okC(x.class));
-        let classes;
-        if (cls === null) { const set = new Set(); (await all('SELECT DISTINCT class FROM pupils')).forEach(x => x.class && set.add(x.class.trim().toUpperCase())); asg.forEach(x => set.add(x.class.trim().toUpperCase())); (await all('SELECT DISTINCT class FROM teacher_classes')).forEach(x => set.add(x.class)); classes = [...set].filter(Boolean).sort(); } else classes = [...cls].sort();
+        const asg = (await all('SELECT class_id,story FROM assignments')).filter(x => okC(x.class_id));
+        const classes = (await all('SELECT id,name,archived FROM classes ORDER BY name COLLATE NOCASE')).filter(c => okC(c.id));
         return J({ pupils, choices: ch,
-          completions: await all(`SELECT p.username,p.class,c.story,c.points,c.perfect,c.reflection,c.ts FROM completions c JOIN pupils p ON p.id=c.pupil_id WHERE ${s.q} ORDER BY c.ts DESC LIMIT 300`, ...s.b),
-          writings: await all(`SELECT w.id,p.username,p.class,w.story,w.text,w.checks,w.comment,w.ts FROM writings w JOIN pupils p ON p.id=w.pupil_id WHERE ${s.q} ORDER BY w.id DESC LIMIT 300`, ...s.b),
+          completions: await all(`SELECT p.id pupil_id,p.username,p.class_id,COALESCE(cc.name,'') class,c.story,c.points,c.perfect,c.reflection,c.ts FROM completions c JOIN pupils p ON p.id=c.pupil_id LEFT JOIN classes cc ON cc.id=p.class_id WHERE ${s.q} ORDER BY c.ts DESC LIMIT 300`, ...s.b),
+          writings: await all(`SELECT w.id,p.id pupil_id,p.username,p.class_id,COALESCE(cc.name,'') class,w.story,w.text,w.checks,w.comment,w.ts FROM writings w JOIN pupils p ON p.id=w.pupil_id LEFT JOIN classes cc ON cc.id=p.class_id WHERE ${s.q} ORDER BY w.id DESC LIMIT 300`, ...s.b),
           transfer: {
             choose: await all(`SELECT t.task,COUNT(*) n,SUM(t.a) a,SUM(t.b) b FROM transfer_log t JOIN pupils p ON p.id=t.pupil_id WHERE t.kind='choose' AND ${s.q} GROUP BY t.task`, ...s.b),
             wrong: await all(`SELECT t.task,t.wrong,COUNT(*) n FROM transfer_log t JOIN pupils p ON p.id=t.pupil_id WHERE t.kind='choose' AND t.wrong!='' AND ${s.q} GROUP BY t.task,t.wrong`, ...s.b),
@@ -305,49 +271,25 @@ export default {
             fix: await all(`SELECT t.task,COUNT(DISTINCT t.pupil_id) pupils,COUNT(DISTINCT CASE WHEN t.a=1 THEN t.pupil_id END) passed,COUNT(*) attempts FROM transfer_log t JOIN pupils p ON p.id=t.pupil_id WHERE t.kind='fix' AND ${s.q} GROUP BY t.task`, ...s.b)
           },
           transferTasks: { choose: TR.choose.map(x => ({ id: x.id, title: x.title, type: x.type })), repair: TR.repair.map(x => ({ id: x.id, title: x.title, type: x.type })) },
-          assignments: asg, classes, checkLabels: LABELS,
+          assignments: asg, classes, guests: su, checkLabels: LABELS,
           ai: await (async () => { const a = await aiState(env); return { enabled: a.enabled, daily: a.daily, providers: a.cfg }; })(),
-          aiChecks: await all(`SELECT a.id,p.username,p.class,a.story,a.rule,a.snippet,a.verdicts,a.outcome,a.reason,a.source,a.reattempts,a.ts FROM ai_checks a JOIN pupils p ON p.id=a.pupil_id WHERE ${s.q} ORDER BY a.id DESC LIMIT 100`, ...s.b), skills: D.skills, ranks: RANKS, stories: Object.entries(D.stories).map(([id, s]) => ({ id, title: s.title, type: s.type })), types: TYPES });
+          aiChecks: await all(`SELECT a.id,p.id pupil_id,p.username,p.class_id,COALESCE(cc.name,'') class,a.story,a.rule,a.snippet,a.verdicts,a.outcome,a.reason,a.source,a.reattempts,a.ts FROM ai_checks a JOIN pupils p ON p.id=a.pupil_id LEFT JOIN classes cc ON cc.id=p.class_id WHERE ${s.q} ORDER BY a.id DESC LIMIT 100`, ...s.b), skills: D.skills, ranks: RANKS, stories: Object.entries(D.stories).map(([id, s]) => ({ id, title: s.title, type: s.type })), types: TYPES });
       }
       if (m === 'GET' && path === '/api/admin/pupil') {
-        const p = await pupilOf(url.searchParams.get('u')); if (!p) return J({ error: 'No such pupil in your classes' }, 404);
+        const p = await pupilOf(url.searchParams.get('id')); if (!p) return J({ error: 'No such pupil in your classes' }, 404);
         const picks = (await all('SELECT story,node,idx,r,p,tries,ms,ts FROM picks WHERE pupil_id=? ORDER BY id DESC LIMIT 150', p.id)).map(x => ({ ...x, choice: lab(x.story, x.node, x.idx) }));
         return J({ pupil: p, picks, completions: await all('SELECT story,points,perfect,reflection,ts FROM completions WHERE pupil_id=? ORDER BY id DESC', p.id), writings: await all('SELECT id,story,text,comment,ts FROM writings WHERE pupil_id=? ORDER BY id DESC', p.id), sorts: await all('SELECT score,total,ts FROM sorts WHERE pupil_id=? ORDER BY id DESC LIMIT 10', p.id) });
       }
-      if (m === 'POST' && path === '/api/admin/reset-pin') {
-        const p = await pupilOf(b.username), pin = cl(b.pin, 8);
-        if (!p) return J({ error: 'No such pupil in your classes' }, 404);
-        if (!/^\d{4,8}$/.test(pin)) return J({ error: 'PIN must be 4-8 digits' }, 400);
-        await DB.prepare('UPDATE pupils SET pin_hash=? WHERE id=?').bind(await sha(p.username + ':' + pin), p.id).run();
-        return J({ ok: 1 });
-      }
-      if (m === 'POST' && path === '/api/admin/delete-pupil') {
-        const p = await pupilOf(b.username); if (!p) return J({ error: 'No such pupil in your classes' }, 404);
-        for (const t of ['picks', 'runs', 'completions', 'writings', 'sorts', 'sessions', 'skill_log', 'xp_log', 'ai_checks', 'transfer_log']) await DB.prepare(`DELETE FROM ${t} WHERE pupil_id=?`).bind(p.id).run();
-        await DB.prepare('DELETE FROM pupils WHERE id=?').bind(p.id).run();
-        return J({ ok: 1 });
-      }
-      if (m === 'POST' && path === '/api/admin/bulk') {
-        const cn = cl(b.class, 20).toUpperCase(), out = [];
-        if (!okC(cn)) return J({ error: 'You can only add pupils to your own classes' }, 403);
-        for (const raw of (Array.isArray(b.names) ? b.names : []).slice(0, 60)) {
-          let base = cl(raw, 40).toLowerCase().replace(/[^a-z0-9]+/g, '').slice(0, 16); if (base.length < 3) continue;
-          let u = base, k = 1; while (await DB.prepare('SELECT 1 FROM pupils WHERE username=?').bind(u).first()) u = base + (++k);
-          const pin = String(1000 + (crypto.getRandomValues(new Uint32Array(1))[0] % 9000));
-          await DB.prepare('INSERT INTO pupils(username,class,pin_hash) VALUES(?,?,?)').bind(u, cn, await sha(u + ':' + pin)).run();
-          out.push({ name: cl(raw, 40), username: u, pin, class: cn });
-        }
-        return J({ created: out });
-      }
       if (m === 'POST' && path === '/api/admin/comment') {
-        const r = await DB.prepare('SELECT p.class FROM writings w JOIN pupils p ON p.id=w.pupil_id WHERE w.id=?').bind(b.id | 0).first();
-        if (!r || !okC(r.class)) return J({ error: 'Not found in your classes' }, 404);
+        const r = await DB.prepare('SELECT p.class_id FROM writings w JOIN pupils p ON p.id=w.pupil_id WHERE w.id=?').bind(b.id | 0).first();
+        if (!r || !okC(r.class_id)) return J({ error: 'Not found in your classes' }, 404);
         await DB.prepare('UPDATE writings SET comment=? WHERE id=?').bind(cl(b.comment, 500), b.id | 0).run(); return J({ ok: 1 });
       }
       if (m === 'POST' && path === '/api/admin/assign') {
         if (!D.stories[b.story]) return J({ error: 'Bad story' }, 400);
-        const cn = cl(b.class, 20).toUpperCase(); if (!cn || !okC(cn)) return J({ error: 'Not one of your classes' }, 403);
-        await (b.on ? DB.prepare('INSERT OR IGNORE INTO assignments(class,story) VALUES(?,?)').bind(cn, b.story) : DB.prepare('DELETE FROM assignments WHERE UPPER(TRIM(class))=? AND story=?').bind(cn, b.story)).run();
+        const cid = b.class_id | 0; if (!cid || !okC(cid)) return J({ error: 'Not one of your classes' }, 403);
+        if (!(await DB.prepare('SELECT 1 FROM classes WHERE id=?').bind(cid).first())) return J({ error: 'Class not found' }, 404);
+        await (b.on ? DB.prepare('INSERT OR IGNORE INTO assignments(class_id,story) VALUES(?,?)').bind(cid, b.story) : DB.prepare('DELETE FROM assignments WHERE class_id=? AND story=?').bind(cid, b.story)).run();
         return J({ ok: 1 });
       }
       if (m === 'POST' && path === '/api/admin/ai-settings') {
@@ -358,7 +300,7 @@ export default {
       if (m === 'POST' && path === '/api/admin/ai-reattempt') {
         // Teacher re-attempt: Workers AI + Grok only
         const ai = await aiState(env); if (!ai.on) return J({ error: 'The AI helper is off (super admin setting).' }, 403);
-        const a = await DB.prepare('SELECT a.*,p.class pclass FROM ai_checks a JOIN pupils p ON p.id=a.pupil_id WHERE a.id=?').bind(b.id | 0).first();
+        const a = await DB.prepare('SELECT a.*,p.class_id pclass FROM ai_checks a JOIN pupils p ON p.id=a.pupil_id WHERE a.id=?').bind(b.id | 0).first();
         if (!a || !okC(a.pclass)) return J({ error: 'Not found in your classes' }, 404);
         if (a.reattempts >= 3) return J({ error: 'Already re-checked 3 times.' }, 429);
         const list = ['workers', 'grok'].filter(k => ai.cfg[k]); if (!list.length) return J({ error: 'Workers AI and Grok are not set up.' }, 400);
@@ -371,19 +313,20 @@ export default {
         return J({ ok: 1, outcome: jr.outcome, reason: jr.reason });
       }
       /* ---------- teacher accounts (super admin only, except own password) ---------- */
-      if (m === 'GET' && path === '/api/admin/teachers') { if (!su) return J({ error: 'Super admin only' }, 403); return J({ teachers: (await all('SELECT t.username,t.created,GROUP_CONCAT(c.class) classes FROM teachers t LEFT JOIN teacher_classes c ON c.teacher_id=t.id GROUP BY t.id ORDER BY t.username')).map(t => ({ ...t, classes: t.classes ? t.classes.split(',') : [] })) }); }
+      if (m === 'GET' && path === '/api/admin/teachers') { if (!su) return J({ error: 'Super admin only' }, 403); return J({ teachers: (await all('SELECT t.username,t.created,GROUP_CONCAT(c.class_id) class_ids FROM teachers t LEFT JOIN teacher_classes c ON c.teacher_id=t.id GROUP BY t.id ORDER BY t.username')).map(({ class_ids, ...t }) => ({ ...t, classIds: class_ids ? class_ids.split(',').map(Number) : [] })), canCreate: (await DB.prepare("SELECT value FROM settings WHERE key='teacher_class_create'").first())?.value !== '0' }); }
       if (m === 'POST' && path === '/api/admin/teacher-classes') {
         if (!su) return J({ error: 'Super admin only' }, 403);
         const t = await DB.prepare('SELECT id FROM teachers WHERE username=?').bind(cl(b.username, 30).toLowerCase()).first(); if (!t) return J({ error: 'No such teacher' }, 404);
-        const list = [...new Set((Array.isArray(b.classes) ? b.classes : []).map(x => cl(x, 20).replace(/,/g, '').toUpperCase()).filter(Boolean))].slice(0, 30);
+        const known = new Set((await all('SELECT id FROM classes')).map(c => c.id));
+        const list = [...new Set((Array.isArray(b.classIds) ? b.classIds : []).map(Number).filter(id => known.has(id)))].slice(0, 200);
         await DB.prepare('DELETE FROM teacher_classes WHERE teacher_id=?').bind(t.id).run();
-        for (const c of list) await DB.prepare('INSERT INTO teacher_classes(teacher_id,class) VALUES(?,?)').bind(t.id, c).run();
-        return J({ ok: 1, classes: list });
+        for (const c of list) await DB.prepare('INSERT INTO teacher_classes(teacher_id,class_id) VALUES(?,?)').bind(t.id, c).run();
+        return J({ ok: 1, classIds: list });
       }
       if (m === 'POST' && path === '/api/admin/teacher-create') {
         if (!su) return J({ error: 'Super admin only' }, 403);
         const u = cl(b.username, 30).toLowerCase(), p = cl(b.password, 100);
-        if (!/^[a-z0-9_.-]{3,30}$/.test(u) || u === String(env.admin_user || 'admin123').toLowerCase()) return J({ error: 'Username: 3-30 letters or numbers (not the super admin name)' }, 400);
+        if (!/^[a-z0-9_.-]{3,30}$/.test(u) || u === String((adminCreds(env) || {}).user || '').toLowerCase()) return J({ error: 'Username: 3-30 letters or numbers (not the super admin name)' }, 400);
         if (p.length < 8) return J({ error: 'Password needs at least 8 characters' }, 400);
         if (await DB.prepare('SELECT 1 FROM teachers WHERE username=?').bind(u).first()) return J({ error: 'That teacher already exists' }, 409);
         const salt = hx(crypto.getRandomValues(new Uint8Array(16)));
@@ -397,13 +340,11 @@ export default {
         const t = await DB.prepare('SELECT id FROM teachers WHERE username=?').bind(u).first(); if (!t) return J({ error: 'No such teacher' }, 404);
         const salt = hx(crypto.getRandomValues(new Uint8Array(16)));
         await DB.prepare('UPDATE teachers SET salt=?,hash=? WHERE id=?').bind(salt, await pw(p, salt), t.id).run();
-        await DB.prepare("DELETE FROM sessions WHERE role='teacher' AND pupil_id=?").bind(t.id).run();
-        return J({ ok: 1 });
+        return J({ ok: 1 }); // their token carries the old password's fingerprint, so it stops working
       }
       if (m === 'POST' && path === '/api/admin/teacher-delete') {
         if (!su) return J({ error: 'Super admin only' }, 403);
         const t = await DB.prepare('SELECT id FROM teachers WHERE username=?').bind(cl(b.username, 30).toLowerCase()).first(); if (!t) return J({ error: 'No such teacher' }, 404);
-        await DB.prepare("DELETE FROM sessions WHERE role='teacher' AND pupil_id=?").bind(t.id).run();
         await DB.prepare('DELETE FROM teacher_classes WHERE teacher_id=?').bind(t.id).run();
         await DB.prepare('DELETE FROM teachers WHERE id=?').bind(t.id).run();
         return J({ ok: 1 });
@@ -414,10 +355,11 @@ export default {
         if (!t || !same(t.hash, await pw(cl(b.old, 100), t.salt))) return J({ error: 'Current password is wrong' }, 401);
         if (p.length < 8) return J({ error: 'Password needs at least 8 characters' }, 400);
         const salt = hx(crypto.getRandomValues(new Uint8Array(16)));
-        await DB.prepare('UPDATE teachers SET salt=?,hash=? WHERE id=?').bind(salt, await pw(p, salt), t.id).run();
-        return J({ ok: 1 });
+        const hash = await pw(p, salt);
+        await DB.prepare('UPDATE teachers SET salt=?,hash=? WHERE id=?').bind(salt, hash, t.id).run();
+        return J({ ok: 1, token: await teacherToken(env, { id: t.id, hash }) }); // a fresh token: the old one carried the old password
       }
       return J({ error: 'Not found' }, 404);
-    } catch (e) { return J({ error: 'Server error' }, 500); }
+    } catch (e) { if (e instanceof HttpError) return J({ error: e.message }, e.status); if (env.DEBUG) console.error(e); return J({ error: 'Server error' }, 500); }
   }
 };

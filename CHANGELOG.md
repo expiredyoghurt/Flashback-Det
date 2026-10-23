@@ -1,4 +1,10 @@
 # Changelog
+## v2.1: story rewrite (no database changes)
+- All 10 stories rewritten to 250+ words (finished best-path story), with the parts matched to each type's story map. Embedded memories stay within the 12-70 word limit; the extra length is in the present-action parts. Memories start with "had" and then use simple past.
+- The Lost Puppy: both correct paths kept (flashback "right now" and "later"). New `ret` (return) node for the "now" path and `retb` for the "later" path, so both now have a climax and a resolution. The return line no longer sits inside the highlighted flashback block.
+- Embedded stories: the climax and resolution are one `ret` option (two paragraphs). Classical stories assemble as 1 + 4 + 1 paragraphs; classic linked stories as 1 + 3 + 1 + 1.
+- Type names are now "Embedded Linked Flashback", "Classic Linked Flashback" and "Classical Flashback" throughout (`kind` in `src/stories.json` and the feedback text).
+- Fix the Flashback: the boxes and model fixes for The Lost Puppy, The Old Bicycle and The New Boy tasks use the new wording (checked: each original fails a target, each model fix passes every target).
 ## v2.0: classes and log-in like Dialogue Dungeon
 - **Pupils log in with a username and a class code.** No PINs, no passwords and no self-registration; a teacher adds the pupils. One generic message for every failed log-in, per-IP rate limits, and 12-hour signed sign-ins held in the browser tab (not in localStorage). **Play as a guest** is new: no class, work kept for 30 days, visible only to the super admin, and no AI helper.
 - **Classes are real.** Each has a name, a unique 6-character code (no 0/O/1/I/L), an archive switch and a session version. A new code can sign the whole class out; archiving does. Usernames are unique within a class. Pupils, assigned stories and teacher rights now point at class ids instead of free-text names.

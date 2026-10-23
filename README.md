@@ -1,6 +1,6 @@
-# Flashback Detectives v2.0
+# Flashback Detectives v2.1
 
-Branching-story practice for P3/4 pupils: 10 stories (4 embedded, 4 linked, 2 classical) plus a sorting game. See CHANGELOG.md.
+Branching-story practice for P3/4 pupils: 10 stories (4 embedded linked, 4 classic linked, 2 classical) plus a sorting game. See CHANGELOG.md.
 Cloudflare Worker + D1 database + static pages (`public/`). Pupils log in with their **username and a class code** (no passwords or PINs), or play as a guest. Teachers use `/teacher.html`.
 
 ## Files

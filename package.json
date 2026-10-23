@@ -8,5 +8,5 @@
     "test": "node --import ./test/register.mjs --test test/*.test.mjs",
     "migration:sql": "node -e \"import('./src/migrate.js').then(async m=>(await import('node:fs')).writeFileSync('migrate-v2.0.sql',m.migrationSql()))\""
   },
-  "version": "2.0.0"
+  "version": "2.1.0"
 }

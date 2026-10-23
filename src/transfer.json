@@ -228,7 +228,7 @@
 "edit": 1,
 "diag": [
 {
-"t": "The flashback is far too long for an embedded flashback.",
+"t": "The flashback is far too long for an embedded linked flashback.",
 "ok": 1,
 "f": ""
 },
@@ -257,7 +257,7 @@
 "type": "embedded",
 "title": "Describing, Not Explaining",
 "parts": [
-"Tom picked up the puppy, and its warmth reminded him of something.",
+"Tom knelt down and gently picked up the puppy. Its warmth reminded him of something.",
 "Max had brown fur with white patches. He had long floppy ears, a wet black nose and a tail that wagged all day.",
 "Tom blinked and looked down at the puppy in his arms."
 ],
@@ -285,15 +285,15 @@
 "explain",
 "had"
 ],
-"model": "Tom remembered Max, who had been abandoned and scared at the shelter, just like this puppy. That day, Tom had promised to always help animals in need."
+"model": "Three years ago, Tom had found Max at the animal shelter, abandoned and scared, just like this puppy. He promised himself that day to always help animals who needed him."
 },
 {
 "id": "rreturn",
 "type": "embedded",
 "title": "Stuck in the Past",
 "parts": [
-"Tom picked up the puppy, and its warmth reminded him of something.",
-"Last year, Tom had found Max at the shelter, abandoned and scared. He had promised to always help animals who needed him.",
+"Tom knelt down and gently picked up the puppy. Its warmth reminded him of something.",
+"Three years ago, Tom had found Max at the animal shelter, abandoned and scared, just like this puppy. He promised himself that day to always help animals who needed him.",
 "Tom had remembered how Max had been scared at the shelter. He had loved Max so much and had cried when Max died."
 ],
 "edit": 2,
@@ -309,7 +309,7 @@
 },
 {
 "t": "There is no time clue.",
-"f": "“Last year” is a time clue."
+"f": "“Three years ago” is a time clue."
 },
 {
 "t": "The first sentence is not a trigger.",
@@ -319,16 +319,16 @@
 "targets": [
 "ret"
 ],
-"model": "Tom blinked and looked down at the puppy in his arms. He held it closer and walked on."
+"model": "Tom blinked and looked down at the puppy in his arms. It had stopped shivering and was licking his chin. “Don’t worry,” he whispered. “I’ll find your family.”"
 },
 {
 "id": "rshort",
 "type": "classical",
 "title": "A Memory That Is Too Small",
 "parts": [
-"Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile.",
+"Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile. The bicycle had belonged to Grandpa for as long as Mei could remember, and it had waited in the corner ever since he stopped cycling. Today she was helping her mother clear out the storeroom, but she could not walk past the old bicycle without stopping.",
 "She remembered learning to ride with Grandpa.",
-"Ring! The bell sounded and Mei was back in the dusty storeroom, smiling."
+"Ring! The bell sounded beneath Mei’s thumb, and she was back in the dusty storeroom. She wiped the seat clean with her sleeve and wheeled the bicycle into the sunshine. “Ready to ride again, Grandpa,” she whispered."
 ],
 "edit": 1,
 "diag": [
@@ -355,16 +355,16 @@
 "had",
 "time"
 ],
-"model": "As Mei pressed the bell, she was seven again. Last summer, Grandpa had held the back of the seat as she wobbled down the lane. “Don’t let go!” she cried. She tumbled, and her knee stung. But Grandpa only smiled and said, “Try once more.” On the last try, his hands were gone, and the wind rushed past as Mei pedalled all by herself."
+"model": "As Mei pressed the faded bell, it went ring-a-ling, and she was seven years old again, standing in the lane behind her block on the first day of the school holidays.\n\nGrandpa had wheeled the red bicycle out of the storeroom and lowered the saddle for her. Mei had climbed on, gripping the handlebars so tightly that her knuckles turned white. Grandpa had held the back of the seat as she wobbled down the lane. “Don’t let go!” she cried.\n\n“I won’t,” said Grandpa. But the bicycle swayed from side to side, and Mei panicked. She wobbled, she tumbled, and her knee stung. Tears filled her eyes, and she wanted to quit. But Grandpa only smiled. “Again,” he said.\n\nMei tried again and again until the sky turned orange. On the last try, the seat felt strangely light. She glanced back. Grandpa stood far behind her with his hands in the air, grinning from ear to ear. The wind rushed past as Mei pedalled all by herself."
 },
 {
 "id": "rtime",
 "type": "classical",
 "title": "Lost in Time",
 "parts": [
-"Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile.",
-"Grandpa held the back of the seat as Mei wobbled down the lane. She tumbled and her knee stung. Grandpa only smiled and told her to try once more. On the last try his hands were gone, and she pedalled all by herself.",
-"Ring! The bell sounded and Mei was back in the dusty storeroom, smiling."
+"Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile. The bicycle had belonged to Grandpa for as long as Mei could remember, and it had waited in the corner ever since he stopped cycling. Today she was helping her mother clear out the storeroom, but she could not walk past the old bicycle without stopping.",
+"Grandpa wheeled the red bicycle out of the storeroom and lowered the saddle for her. Mei climbed on, gripping the handlebars so tightly that her knuckles turned white. Grandpa held the back of the seat as she wobbled down the lane. “Don’t let go!” she cried.\n\n“I won’t,” said Grandpa. But the bicycle swayed from side to side, and Mei panicked. She wobbled, she tumbled, and her knee stung. Tears filled her eyes, and she wanted to quit. But Grandpa only smiled and told her to try once more.\n\nMei kept trying until the sky turned orange. On the last try, the seat felt strangely light. She glanced back. Grandpa stood far behind her with his hands in the air, grinning from ear to ear. The wind rushed past as Mei pedalled all by herself.",
+"Ring! The bell sounded beneath Mei’s thumb, and she was back in the dusty storeroom. She wiped the seat clean with her sleeve and wheeled the bicycle into the sunshine. “Ready to ride again, Grandpa,” she whispered."
 ],
 "edit": 1,
 "diag": [
@@ -390,17 +390,17 @@
 "had",
 "time"
 ],
-"model": "Last summer, Grandpa had held the back of the seat as Mei wobbled down the lane. She tumbled and her knee stung. Grandpa only smiled and told her to try once more. On the last try his hands were gone, and she pedalled all by herself."
+"model": "As Mei pressed the faded bell, it went ring-a-ling, and she was seven years old again, standing in the lane behind her block on the first day of the school holidays.\n\nGrandpa had wheeled the red bicycle out of the storeroom and lowered the saddle for her. Mei had climbed on, gripping the handlebars so tightly that her knuckles turned white. Grandpa had held the back of the seat as she wobbled down the lane. “Don’t let go!” she cried.\n\n“I won’t,” said Grandpa. But the bicycle swayed from side to side, and Mei panicked. She wobbled, she tumbled, and her knee stung. Tears filled her eyes, and she wanted to quit. But Grandpa only smiled. “Again,” he said.\n\nMei tried again and again until the sky turned orange. On the last try, the seat felt strangely light. She glanced back. Grandpa stood far behind her with his hands in the air, grinning from ear to ear. The wind rushed past as Mei pedalled all by herself."
 },
 {
 "id": "rlink",
 "type": "linked",
 "title": "The Missing Link",
 "parts": [
-"At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted because he knew that feeling.",
-"Last year, Ravi had been the new boy. He had stood alone by the fence, and nobody had asked him to play. Then Lisa waved and called him over, and that small wave changed his whole day.",
+"At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted, because he knew that feeling. Ravi had never seen him before. The boy chewed his sandwich slowly and stared at his shoes, while the rest of the school ran and shouted around him. Nobody sat beside him. Ravi’s friends were already calling him to the field, but his feet would not move.",
+"Last year, Ravi had been the new boy. He had stood alone by the fence for the whole of recess, and nobody had asked him to play. He had watched the other children laugh and run, and his lunch had tasted like paper.\n\nThen Lisa had waved. “Come and join us!” she called. Ravi walked over, and soon he was laughing in the middle of a noisy game of catching. For the first time that week, he did not feel like a stranger.\n\nThat small wave had changed his whole day, and Ravi had never forgotten it. He had learned that one kind move can make a lonely person feel they belong. He had promised himself that if he ever saw someone alone, he would do the same.",
 "Ravi looked at the boy for a while.",
-"Ravi took a deep breath and walked over. He waved and asked, “Want to play with us?”"
+"Ravi took a deep breath and walked over. He waved, just as Lisa once had. “Want to play with us?” The boy’s face lit up, and he hurried after Ravi to the field, where the game was just beginning. By the end of recess, the new boy was laughing as loudly as everyone else."
 ],
 "edit": 2,
 "diag": [
@@ -425,16 +425,16 @@
 "targets": [
 "link"
 ],
-"model": "The boy held his lunch box tightly, just as Ravi once had."
+"model": "Back on the steps, Ravi looked at the boy again. He was holding his lunch box tightly, just as Ravi once had. He kept glancing at the games, but he did not dare to ask to join. His shoulders were hunched, as if he wanted to disappear."
 },
 {
 "id": "ract",
 "type": "linked",
 "title": "Telling, Not Showing",
 "parts": [
-"At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted because he knew that feeling.",
-"Last year, Ravi had been the new boy. He had stood alone by the fence, and nobody had asked him to play. Then Lisa waved and called him over, and that small wave changed his whole day.",
-"The boy held his lunch box tightly, just as Ravi once had.",
+"At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted, because he knew that feeling. Ravi had never seen him before. The boy chewed his sandwich slowly and stared at his shoes, while the rest of the school ran and shouted around him. Nobody sat beside him. Ravi’s friends were already calling him to the field, but his feet would not move.",
+"Last year, Ravi had been the new boy. He had stood alone by the fence for the whole of recess, and nobody had asked him to play. He had watched the other children laugh and run, and his lunch had tasted like paper.\n\nThen Lisa had waved. “Come and join us!” she called. Ravi walked over, and soon he was laughing in the middle of a noisy game of catching. For the first time that week, he did not feel like a stranger.\n\nThat small wave had changed his whole day, and Ravi had never forgotten it. He had learned that one kind move can make a lonely person feel they belong. He had promised himself that if he ever saw someone alone, he would do the same.",
+"Back on the steps, Ravi looked at the boy again. He was holding his lunch box tightly, just as Ravi once had. He kept glancing at the games, but he did not dare to ask to join. His shoulders were hunched, as if he wanted to disappear.",
 "Ravi felt kind and happy that day."
 ],
 "edit": 3,
@@ -460,7 +460,7 @@
 "targets": [
 "act"
 ],
-"model": "Ravi took a deep breath and walked over to the boy. He waved and asked, “Want to play with us?”"
+"model": "Ravi took a deep breath and walked over. He waved, just as Lisa once had. “Want to play with us?” The boy’s face lit up, and he hurried after Ravi to the field, where the game was just beginning. By the end of recess, the new boy was laughing as loudly as everyone else."
 }
 ]
 }

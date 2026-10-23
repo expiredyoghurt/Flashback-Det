@@ -1,4 +1,4 @@
-// Flashback Detectives v2.0 API. Static files come from ./public (Workers Assets).
+// Flashback Detectives v2.1 API. Static files come from ./public (Workers Assets).
 // Sign-in and class management live in ./login.js (class codes, signed tokens); the one-off v1.9 -> v2.0 upgrade is ./migrate.js.
 // Secrets: teacher_user + teacher_password (or the older admin_user + admin_password). There are no default logins.
 import D from './stories.json';

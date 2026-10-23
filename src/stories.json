@@ -13,7 +13,7 @@
 "Where did your story start and end? Why?",
 "How did you move into the memory?",
 "Why is the memory the main part of this story?",
-"How is a classical flashback different from an embedded flashback?",
+"How is a classical flashback different from an embedded linked flashback?",
 "One thing I learned about classical flashbacks:"
 ],
 "map": [
@@ -72,7 +72,7 @@
 },
 {
 "s": [
-"A classical flashback is ___, but an embedded flashback is ___.",
+"A classical flashback is ___, but an embedded linked flashback is ___.",
 "In a classical flashback the memory is ___ long.",
 "The main difference is…"
 ],
@@ -121,7 +121,7 @@ null,
 ]
 },
 "linked": {
-"kind": "Linked Flashback",
+"kind": "Classic Linked Flashback",
 "checks": [
 "I started in the present with a trigger",
 "My memory taught the character a lesson",
@@ -133,8 +133,8 @@ null,
 "What lesson did the memory teach?",
 "How did the present situation link back to the memory?",
 "How did the character act differently at the end?",
-"How is a linked flashback different from a classical flashback?",
-"One thing I learned about linked flashbacks:"
+"How is a classic linked flashback different from a classical flashback?",
+"One thing I learned about classic linked flashbacks:"
 ],
 "map": [
 [
@@ -197,9 +197,9 @@ null,
 },
 {
 "s": [
-"A linked flashback ___, but a classical flashback ___.",
-"In a linked flashback the present story…",
-"The difference is that in a linked flashback the character…"
+"A classic linked flashback ___, but a classical flashback ___.",
+"In a classic linked flashback the present story…",
+"The difference is that in a classic linked flashback the character…"
 ],
 "i": [
 "Linked: the memory changes what the character does now.",
@@ -209,7 +209,7 @@ null,
 },
 {
 "s": [
-"I learned that a linked flashback…",
+"I learned that a classic linked flashback…",
 "Next time I will…",
 "The most important part is…"
 ],
@@ -251,7 +251,7 @@ null,
 ]
 },
 "embedded": {
-"kind": "Embedded Flashback",
+"kind": "Embedded Linked Flashback",
 "checks": [
 "My memory is only 1–2 paragraphs",
 "It comes at an emotional moment in the action",
@@ -263,7 +263,7 @@ null,
 "Where did you place your flashback? Why?",
 "How long was it? Why was that the right length?",
 "What did your flashback explain about the character?",
-"How is an embedded flashback different from a classical flashback?",
+"How is an embedded linked flashback different from a classical flashback?",
 "One thing I learned about placing flashbacks:"
 ],
 "map": [
@@ -313,7 +313,7 @@ null,
 "If my flashback was too long, the reader might…"
 ],
 "i": [
-"An embedded flashback is only 1–2 paragraphs.",
+"An embedded linked flashback is only 1–2 paragraphs.",
 "A long memory makes us forget the present story.",
 "A very long memory is a classical flashback, not an embedded one."
 ]
@@ -332,8 +332,8 @@ null,
 },
 {
 "s": [
-"An embedded flashback is ___, but a classical flashback is ___.",
-"In an embedded flashback the main story is ___.",
+"An embedded linked flashback is ___, but a classical flashback is ___.",
+"In an embedded linked flashback the main story is ___.",
 "The biggest difference is…"
 ],
 "i": [
@@ -395,7 +395,7 @@ null,
 "o": [
 {
 "l": "Action opening",
-"t": "A small puppy whimpered under the bus stop.",
+"t": "A small puppy whimpered under the bus stop. It was a grey, drizzly Sunday morning, and the road was almost empty. Tom had been on his way to the library, but the thin, shaky cry made him stop. Under the bench, two tiny eyes shone back at him.",
 "r": "g",
 "p": 20,
 "f": "Strong hook! It grabs the reader straight away.",
@@ -442,7 +442,7 @@ null,
 },
 {
 "l": "Approaches slowly and gently",
-"t": "Tom knelt down and crept closer, speaking softly. Then he gently picked up the puppy. Its warmth reminded him of something...",
+"t": "Tom knelt down and crept closer, speaking softly. The puppy was shivering, and its brown fur was soaked. It had no collar and no name tag. Then he gently picked up the puppy and held it close to his chest. Its warmth reminded him of something...",
 "r": "g",
 "p": 20,
 "f": "Good pacing! It builds an emotional connection.",
@@ -480,7 +480,7 @@ null,
 },
 {
 "l": "LATER (during the search for the owner)",
-"t": "Tom carried the puppy through the neighbourhood, knocking on doors. No one recognised it.",
+"t": "Tom carried the puppy through the neighbourhood, knocking on doors. No one recognised it. At the first house, a man shook his head. At the second, nobody answered at all. The puppy snuggled closer, and Tom’s shoes grew wet and heavy. After an hour, he felt like giving up.",
 "r": "g",
 "p": 0,
 "f": "Searching is another good moment for a memory.",
@@ -495,8 +495,8 @@ null,
 "t": "After an hour of searching, Tom found the puppy's owner. The grateful family thanked him warmly.\n\nAs Tom walked home, he thought about Max...",
 "r": "o",
 "p": 10,
-"f": "Too late for an embedded flashback. The main action is over.",
-"tip": "Embedded flashbacks work DURING the action. This is more like a reflection.",
+"f": "Too late for an embedded linked flashback. The main action is over.",
+"tip": "Embedded linked flashbacks work DURING the action. This is more like a reflection.",
 "n": "sum",
 "x": 1,
 "pl": "end"
@@ -517,7 +517,7 @@ null,
 },
 "len": {
 "q": "How long should the flashback be?",
-"h": "An embedded flashback is short.",
+"h": "An embedded linked flashback is short.",
 "o": [
 {
 "l": "Very brief (2–3 sentences)",
@@ -533,7 +533,7 @@ null,
 },
 {
 "l": "Medium (1 paragraph)",
-"t": "The puppy's warmth reminded Tom of Max. A year ago, Max had been found abandoned at a shelter, scared and alone just like this puppy. Tom had promised that day to always help animals who needed him.",
+"t": "The puppy's warmth reminded Tom of Max. Three years ago, Tom had found Max at the animal shelter, abandoned and scared just like this puppy. Tom had promised that day to always help animals who needed him.",
 "r": "g",
 "p": 20,
 "f": "Good! Meaningful backstory. Perhaps a little long, but it works.",
@@ -575,12 +575,12 @@ null,
 },
 {
 "l": "Finding Max abandoned (the parallel moment)",
-"t": "Tom remembered finding Max at the shelter, abandoned and scared just like this puppy. He had promised himself that day to always help animals who needed him.",
+"t": "Three years ago, Tom had found Max at the animal shelter, abandoned and scared, just like this puppy. Max hid at the back of his cage, trembling. Tom promised himself that day to always help animals who needed him. He kept that promise, and Max became his best friend until he died last year.",
 "r": "g",
 "p": 30,
 "f": "Excellent! Both dogs were abandoned, and the promise explains Tom's motivation.",
-"tip": "Perfect strategic use of an embedded flashback!",
-"n": "sum",
+"tip": "Perfect strategic use of an embedded linked flashback!",
+"n": "ret",
 "x": 1,
 "b": "content",
 "fl": 1
@@ -605,12 +605,12 @@ null,
 "o": [
 {
 "l": "Yes: remember when Max ran away",
-"t": "Tom remembered the time Max had run away. He had searched for hours, knocking on every door, refusing to give up. That day taught him that caring and persistence could bring lost animals home.\n\nTom took a deep breath and knocked on the next door.",
+"t": "Two years ago, Max had run away from the park. Tom had searched for hours, knocking on every door and refusing to give up. A neighbour had finally found Max asleep under her car. That day taught Tom that caring and never giving up could bring lost animals home.",
 "r": "g",
 "p": 30,
 "f": "Strategic placement! The two searches match, so the memory feels natural.",
 "tip": "A parallel action is a great trigger.",
-"n": "sum",
+"n": "retb",
 "x": 1,
 "b": "content",
 "fl": 1
@@ -627,6 +627,82 @@ null,
 }
 ],
 "k": "placement"
+},
+"ret": {
+"q": "How do you get back to the present?",
+"h": "Get back to the present action quickly.",
+"o": [
+{
+"l": "Return smoothly to the action",
+"t": "Tom blinked and looked down at the puppy in his arms. It had stopped shivering and was licking his chin. “Don’t worry,” he whispered. “I’ll find your family.” He carried the puppy from door to door, but nobody recognised it. His arms ached, and the drizzle grew heavier. At the very last house on the street, a little girl pulled the door open. She stared at the puppy, then screamed, “Biscuit!”\n\nThe puppy leapt into her arms and wagged its tail so hard that its whole body wiggled. The girl’s mother thanked Tom again and again and offered him a warm drink. Tom shook his head and smiled. As he walked home, the rain stopped, and he felt as if Max was smiling too.",
+"r": "g",
+"p": 25,
+"f": "Smooth! We are straight back in the present action.",
+"tip": "Return to the moment you left.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Stay in the memory",
+"t": "Tom stayed at the shelter with Max and forgot the puppy entirely.",
+"r": "b",
+"p": 0,
+"f": "We forgot the present story. An embedded linked flashback is a brief pause.",
+"tip": "Always come back.",
+"n": "ret",
+"x": 1,
+"rt": 1
+},
+{
+"l": "End abruptly",
+"t": "Then Tom went home.",
+"r": "o",
+"p": 10,
+"f": "Too abrupt. Show Tom returning to the puppy in his arms.",
+"tip": "Link the memory to what happens next.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
+},
+"retb": {
+"q": "How do you get back to the present?",
+"h": "Get back to the present action quickly.",
+"o": [
+{
+"l": "Return smoothly to the action",
+"t": "Tom took a deep breath and knocked on the next door. A tall man opened it, holding a mug. When he saw the puppy, his eyes grew wide. “That’s Biscuit!” he cried. “My daughter has been crying all morning!” He called up the stairs, and a little girl came thundering down.\n\nThe puppy leapt into her arms and wagged its tail so hard that its whole body wiggled. The girl’s mother thanked Tom again and again and offered him a warm drink. Tom shook his head and smiled. As he walked home, the rain stopped, and he felt as if Max was smiling too.",
+"r": "g",
+"p": 25,
+"f": "Smooth! We are straight back in the present action.",
+"tip": "Return to the moment you left.",
+"n": "sum",
+"x": 1
+},
+{
+"l": "Stay in the memory",
+"t": "Tom stayed in the park with Max and forgot the puppy entirely.",
+"r": "b",
+"p": 0,
+"f": "We forgot the present story. An embedded linked flashback is a brief pause.",
+"tip": "Always come back.",
+"n": "retb",
+"x": 1,
+"rt": 1
+},
+{
+"l": "End abruptly",
+"t": "Then Tom went home.",
+"r": "o",
+"p": 10,
+"f": "Too abrupt. Show Tom returning to the puppy in his arms.",
+"tip": "Link the memory to what happens next.",
+"n": "sum",
+"x": 1
+}
+],
+"k": "return"
 }
 }
 },
@@ -643,7 +719,7 @@ null,
 "o": [
 {
 "l": "In the present, with something that triggers a memory",
-"t": "Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile.",
+"t": "Mei dusted off the rusty red bicycle in the storeroom. Its faded bell made her smile. The bicycle had belonged to Grandpa for as long as Mei could remember, and it had waited in the corner ever since he stopped cycling. Today she was helping her mother clear out the storeroom, but she could not walk past the old bicycle without stopping.",
 "r": "g",
 "p": 20,
 "f": "Great start! The present scene has an object that can trigger the memory.",
@@ -680,7 +756,7 @@ null,
 "o": [
 {
 "l": "A touch and a feeling carry her back",
-"t": "As Mei pressed the faded bell, it went ring-a-ling, and she was seven years old again.",
+"t": "As Mei pressed the faded bell, it went ring-a-ling, and she was seven years old again, standing in the lane behind her block on the first day of the school holidays.",
 "r": "g",
 "p": 25,
 "f": "Excellent! A clear trigger and a smooth transition.",
@@ -718,7 +794,7 @@ null,
 "o": [
 {
 "l": "Most of the story: a beginning, a problem and a climax",
-"t": "Grandpa had held the back of the seat as Mei wobbled down the lane. \"Don't let go!\" she cried. She wobbled, she tumbled, and her knee stung. But Grandpa only smiled. \"Again,\" he said.\n\nOn the last try, his hands were gone. The wind rushed past as Mei pedalled all by herself.",
+"t": "Grandpa had wheeled the red bicycle out of the storeroom and lowered the saddle for her. Mei had climbed on, gripping the handlebars so tightly that her knuckles turned white. Grandpa had held the back of the seat as she wobbled down the lane. “Don’t let go!” she cried.\n\n“I won’t,” said Grandpa. But the bicycle swayed from side to side, and Mei panicked. She wobbled, she tumbled, and her knee stung. Tears filled her eyes, and she wanted to quit. But Grandpa only smiled. “Again,” he said.\n\nMei tried again and again until the sky turned orange. On the last try, the seat felt strangely light. She glanced back. Grandpa stood far behind her with his hands in the air, grinning from ear to ear. The wind rushed past as Mei pedalled all by herself.",
 "r": "g",
 "p": 30,
 "f": "Excellent! In a classical flashback the memory IS the main story, so it has its own problem and climax.",
@@ -732,7 +808,7 @@ null,
 "t": "She remembered learning to ride with Grandpa.",
 "r": "b",
 "p": 5,
-"f": "That is an embedded flashback. Here the memory is the story.",
+"f": "That is an embedded linked flashback. Here the memory is the story.",
 "tip": "Tell the memory in several paragraphs.",
 "n": "memory",
 "x": 1,
@@ -757,7 +833,7 @@ null,
 "o": [
 {
 "l": "The trigger brings her back",
-"t": "Ring! The bell sounded beneath Mei's thumb, and she was back in the dusty storeroom. She wheeled the bicycle into the sunshine. \"Ready to ride again, Grandpa,\" she whispered.",
+"t": "Ring! The bell sounded beneath Mei’s thumb, and she was back in the dusty storeroom. She wiped the seat clean with her sleeve and wheeled the bicycle into the sunshine. “Ready to ride again, Grandpa,” she whispered.",
 "r": "g",
 "p": 25,
 "f": "Excellent! The same trigger returns us, and the ending shows what the memory means to Mei.",
@@ -805,11 +881,11 @@ null,
 "o": [
 {
 "l": "In the present, with a trigger",
-"t": "At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted, because he knew that feeling.",
+"t": "At recess, Ravi saw a boy sitting alone on the canteen steps. His stomach twisted, because he knew that feeling. Ravi had never seen him before. The boy chewed his sandwich slowly and stared at his shoes, while the rest of the school ran and shouted around him. Nobody sat beside him. Ravi’s friends were already calling him to the field, but his feet would not move.",
 "r": "g",
 "p": 20,
 "f": "Great! The trigger is a present situation that connects to the past.",
-"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"tip": "Classic linked flashbacks start with a situation that reminds the character of something.",
 "n": "memory",
 "x": 1
 },
@@ -842,7 +918,7 @@ null,
 "o": [
 {
 "l": "A moment that taught him a lesson",
-"t": "Last year, Ravi had been the new boy. He had stood alone by the fence for the whole of recess, and nobody had asked him to play. Then Lisa had waved. \"Come and join us!\" she had called. That small wave had changed his whole day, and Ravi had never forgotten it.",
+"t": "Last year, Ravi had been the new boy. He had stood alone by the fence for the whole of recess, and nobody had asked him to play. He had watched the other children laugh and run, and his lunch had tasted like paper.\n\nThen Lisa had waved. “Come and join us!” she called. Ravi walked over, and soon he was laughing in the middle of a noisy game of catching. For the first time that week, he did not feel like a stranger.\n\nThat small wave had changed his whole day, and Ravi had never forgotten it. He had learned that one kind move can make a lonely person feel they belong. He had promised himself that if he ever saw someone alone, he would do the same.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory shows a lesson: a small kindness matters.",
@@ -881,7 +957,7 @@ null,
 "o": [
 {
 "l": "Show the situation is similar",
-"t": "Back on the steps, Ravi looked at the boy again. He was holding his lunch box tightly, just as Ravi once had.",
+"t": "Back on the steps, Ravi looked at the boy again. He was holding his lunch box tightly, just as Ravi once had. He kept glancing at the games, but he did not dare to ask to join. His shoulders were hunched, as if he wanted to disappear.",
 "r": "g",
 "p": 25,
 "f": "Excellent! The similar situation (second-last paragraph) links the memory to now.",
@@ -909,11 +985,11 @@ null,
 "o": [
 {
 "l": "He acts differently because of the lesson",
-"t": "Ravi took a deep breath and walked over. He waved, just as Lisa once had. \"Want to play with us?\" The boy's face lit up.",
+"t": "Ravi took a deep breath and walked over. He waved, just as Lisa once had. “Want to play with us?” The boy’s face lit up, and he hurried after Ravi to the field, where the game was just beginning. By the end of recess, the new boy was laughing as loudly as everyone else.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory changed how Ravi acts.",
-"tip": "In a linked flashback, the lesson changes what the character does.",
+"tip": "In a classic linked flashback, the lesson changes what the character does.",
 "n": "sum",
 "x": 1
 },
@@ -956,7 +1032,7 @@ null,
 "o": [
 {
 "l": "Present, with a trigger",
-"t": "Hui Ling brushed the leaves off the old rope ladder behind the garden shed. It still smelled of rain and sunshine.",
+"t": "Hui Ling brushed the leaves off the old rope ladder behind the garden shed. It still smelled of rain and sunshine. Nobody had climbed it since her cousin Amir moved away. High above her, the little wooden treehouse sat quietly among the branches, as if it were waiting. The ropes were rough and dry, but the knots Amir had tied were still tight.",
 "r": "g",
 "p": 20,
 "f": "Great start! The present scene has an object that can trigger the memory.",
@@ -993,7 +1069,7 @@ null,
 "o": [
 {
 "l": "A touch and a feeling carry them back",
-"t": "She tugged the rope, and the old branch creaked. The sound pulled her back to last summer.",
+"t": "She tugged the rope, and the old branch creaked, pulling her back to last summer, when the treehouse was only a pile of wood and a very big idea.",
 "r": "g",
 "p": 25,
 "f": "Excellent! A clear trigger and a smooth transition.",
@@ -1031,7 +1107,7 @@ null,
 "o": [
 {
 "l": "A full memory: beginning, problem, climax",
-"t": "Amir had hammered the first plank. “Hold it still!” he had laughed. Hui Ling had held on tight, but the plank slipped and thudded to the ground. They had tried again and again, until the sky turned orange.\n\nAt last, the final plank clicked into place. They had climbed up together and watched the sun slide behind the rooftops.",
+"t": "Amir had hammered the first plank into the thick branch, and Hui Ling had held the ladder steady below. “Hold it still!” he laughed. But the plank slipped and thudded to the ground, and both of them burst out laughing.\n\nThe next plank was worse. It split in half, and a nail bent. Then dark clouds rolled in, and the first drops of rain splashed on their arms. Amir wanted to go home, but Hui Ling shook her head. “Let’s try again,” she said. They tried again and again, until the sky turned orange.\n\nAt last, the final plank clicked into place. They climbed up together, soaked and muddy, and sat on their very own treehouse floor. They watched the sun slide behind the rooftops, and neither of them said a word.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory IS the main story, so it has its own problem and climax.",
@@ -1045,7 +1121,7 @@ null,
 "t": "She remembered building a treehouse with Amir.",
 "r": "b",
 "p": 5,
-"f": "That is an embedded flashback. Here the memory is the story.",
+"f": "That is an embedded linked flashback. Here the memory is the story.",
 "tip": "Tell the memory in several paragraphs.",
 "n": "memory",
 "x": 1,
@@ -1070,7 +1146,7 @@ null,
 "o": [
 {
 "l": "The trigger brings them back",
-"t": "The branch creaked again, and Hui Ling was back in the garden. Amir had moved away, but the ladder was still strong. She smiled and began to climb.",
+"t": "The branch creaked again, and Hui Ling was back in the garden. Amir had moved away, but the ladder was still strong. She smiled and began to climb. At the top, she sat on the floor they had built and whispered, “I’ll send you a photo, Amir.”",
 "r": "g",
 "p": 25,
 "f": "Excellent! The same trigger returns us, and the ending shows what the memory means.",
@@ -1118,11 +1194,11 @@ null,
 "o": [
 {
 "l": "Present trigger",
-"t": "Jia Hao’s elbow knocked the paint pot, and red splashed across Dev’s painting. His stomach dropped, because he had felt this before.",
+"t": "Jia Hao’s elbow knocked the paint pot, and red splashed across Dev’s painting. His stomach dropped, because he had felt this before. Dev had spent the whole morning on his picture of a sunset over the sea, but now he had gone to wash his brush. All around the art room, children were busy painting, and nobody had seen what happened. If Jia Hao said nothing, nobody would ever know.",
 "r": "g",
 "p": 20,
 "f": "Great! A present trigger that connects to the past.",
-"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"tip": "Classic linked flashbacks start with a situation that reminds the character of something.",
 "n": "memory",
 "x": 1
 },
@@ -1155,7 +1231,7 @@ null,
 "o": [
 {
 "l": "A moment that taught a lesson",
-"t": "Last year, Jia Hao had broken Aisha’s ruler. He had hidden it and said nothing. When Aisha found out, she had looked at him sadly. “I wish you had told me,” she had said. She had never shared her pencils with him again, and he had never forgotten how heavy his lie had felt.",
+"t": "Last year, Jia Hao had broken Aisha’s ruler. He had hidden it in his bag and said nothing. For a whole week, he had pretended to help her look for it.\n\nWhen Aisha found out, she looked at him sadly. “I wish you had told me,” she said. She never shared her pencils with him again.\n\nJia Hao never forgot how heavy his lie felt. It sat in his chest like a stone for weeks. He learned that hiding a mistake is worse than the mistake itself.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory shows a lesson.",
@@ -1194,7 +1270,7 @@ null,
 "o": [
 {
 "l": "Show the situation is similar",
-"t": "Now Jia Hao stared at the red streaks. He could cover it with a cloth, just as he had hidden the ruler. The same heavy feeling crept into his chest.",
+"t": "Now Jia Hao stared at the red streaks. He could cover them with a cloth, just as he had hidden the ruler. The same heavy feeling crept into his chest, and his hands began to shake. Dev’s footsteps were coming closer.",
 "r": "g",
 "p": 25,
 "f": "Excellent! The similar situation links the memory to now.",
@@ -1222,11 +1298,11 @@ null,
 "o": [
 {
 "l": "Acts differently because of the lesson",
-"t": "Jia Hao took a deep breath and walked over to Dev. “I’m sorry. It was an accident, and I should have told you at once.” Dev blinked, then smiled. “Thanks for telling me. We can fix it together.”",
+"t": "Jia Hao took a deep breath and walked over to Dev. “I’m sorry. It was an accident, and I should have told you at once.” Dev blinked, then smiled. “Thanks for telling me. We can fix it together.” They dipped their brushes in yellow paint and turned the red streaks into a glowing sun. Soon the two boys were laughing, and the painting looked even better than before.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory changed how the character acts.",
-"tip": "In a linked flashback, the lesson changes what the character does.",
+"tip": "In a classic linked flashback, the lesson changes what the character does.",
 "n": "sum",
 "x": 1
 },
@@ -1269,7 +1345,7 @@ null,
 "o": [
 {
 "l": "Action or tension",
-"t": "The starter gun cracked, and Anya’s heart thudded as she waited for the baton.",
+"t": "The starter gun cracked, and Anya’s heart thudded as she waited for the baton. It was Sports Day, and the whole school sat along the edge of the field, clapping and shouting. Anya was the last runner on her team. She stood alone at the final bend with her hand stretched out behind her.",
 "r": "g",
 "p": 20,
 "f": "Strong hook! It grabs the reader straight away.",
@@ -1306,7 +1382,7 @@ null,
 "o": [
 {
 "l": "Build the tense moment",
-"t": "Her teammate Bella thundered round the bend, but they were in third place. Anya’s knees wobbled.",
+"t": "Her teammate Bella thundered round the bend, but they were in third place. Two other runners were far ahead, and their classmates were already cheering for them. Anya’s knees wobbled. What if she tripped? What if she made her team lose? Her palms were damp, and the baton felt very far away.",
 "r": "g",
 "p": 20,
 "f": "Good! Rising tension makes a memory feel needed.",
@@ -1367,8 +1443,8 @@ null,
 "t": "",
 "r": "o",
 "p": 10,
-"f": "Too late. The action is finished, so this is a reflection, not an embedded flashback.",
-"tip": "Embedded flashbacks work DURING the action.",
+"f": "Too late. The action is finished, so this is a reflection, not an embedded linked flashback.",
+"tip": "Embedded linked flashbacks work DURING the action.",
 "n": "len",
 "pl": "end"
 },
@@ -1387,7 +1463,7 @@ null,
 },
 "len": {
 "q": "How long should the flashback be?",
-"h": "Embedded flashbacks are short: 1–2 paragraphs.",
+"h": "Embedded linked flashbacks are short: 1–2 paragraphs.",
 "o": [
 {
 "l": "Very brief (2–3 sentences)",
@@ -1419,7 +1495,7 @@ null,
 "r": "b",
 "p": 5,
 "f": "Too long! We forgot the present story. This looks like a CLASSICAL flashback.",
-"tip": "Keep an embedded flashback to 1–2 paragraphs.",
+"tip": "Keep an embedded linked flashback to 1–2 paragraphs.",
 "n": "len",
 "x": 1,
 "rt": 1,
@@ -1434,11 +1510,11 @@ null,
 "o": [
 {
 "l": "A matching moment from the past",
-"t": "Anya remembered the evening she had fallen at the park, her knee stinging. Dad had helped her up. “Finishing matters more than winning,” he had said.",
+"t": "Last spring, Anya had practised at the park while Dad timed her laps. She tripped and scraped her knee, and she wanted to quit. Dad knelt beside her. “Finishing matters more than winning,” he said. She finished that lap, limping, and Dad cheered louder than anyone.",
 "r": "g",
 "p": 30,
 "f": "Excellent! It matches the present moment and explains the feeling.",
-"tip": "This is a perfect strategic use of an embedded flashback!",
+"tip": "This is a perfect strategic use of an embedded linked flashback!",
 "n": "ret",
 "x": 1,
 "b": "content",
@@ -1475,7 +1551,7 @@ null,
 "o": [
 {
 "l": "Return smoothly to the action",
-"t": "Anya blinked. Bella’s hand was stretched out, the baton shining. Anya gripped it and ran.",
+"t": "Anya blinked. Bella’s hand was stretched out, the baton shining. Anya gripped it and ran. Her shoes pounded the track, and the wind roared in her ears. She passed the runner in third place on the long straight. Her legs burned, and part of her wanted to slow down, but she heard Dad’s voice again and kept going.\n\nShe crossed the line in second place, gasping for breath. Bella hugged her, and the whole team jumped up and down. Anya had not won, but she had finished, and she felt proud. In the crowd, Dad raised both thumbs high. Anya waved back, and for the first time all day, her knees stopped shaking.",
 "r": "g",
 "p": 25,
 "f": "Smooth! We are straight back in the present action.",
@@ -1488,7 +1564,7 @@ null,
 "t": "Anya stayed at the park with Dad and forgot the race entirely.",
 "r": "b",
 "p": 0,
-"f": "We forgot the present story. An embedded flashback is a brief pause.",
+"f": "We forgot the present story. An embedded linked flashback is a brief pause.",
 "tip": "Always come back.",
 "n": "ret",
 "x": 1,
@@ -1522,7 +1598,7 @@ null,
 "o": [
 {
 "l": "Action or tension",
-"t": "A brown wallet lay on the empty MRT seat, bulging with notes.",
+"t": "A brown wallet lay on the empty MRT seat, bulging with notes. It was a quiet Tuesday afternoon, and the train rattled gently as Kai travelled home from school. An old man at the far end of the carriage was fast asleep, and nobody else was in sight. Kai had been thinking about his homework, but now he could not look away.",
 "r": "g",
 "p": 20,
 "f": "Strong hook! It grabs the reader straight away.",
@@ -1559,7 +1635,7 @@ null,
 "o": [
 {
 "l": "Build the tense moment",
-"t": "Kai’s heart thumped. Nobody was watching. He could buy the football he wanted.",
+"t": "Kai’s heart thumped. Nobody was watching. He peeked inside the wallet and saw a thick stack of notes. He could buy the football he wanted. He could already imagine kicking it across the field with his friends. He had been saving for months, but he was still far from having enough. His fingers closed around the wallet.",
 "r": "g",
 "p": 20,
 "f": "Good! Rising tension makes a memory feel needed.",
@@ -1620,8 +1696,8 @@ null,
 "t": "",
 "r": "o",
 "p": 10,
-"f": "Too late. The action is finished, so this is a reflection, not an embedded flashback.",
-"tip": "Embedded flashbacks work DURING the action.",
+"f": "Too late. The action is finished, so this is a reflection, not an embedded linked flashback.",
+"tip": "Embedded linked flashbacks work DURING the action.",
 "n": "len",
 "pl": "end"
 },
@@ -1640,7 +1716,7 @@ null,
 },
 "len": {
 "q": "How long should the flashback be?",
-"h": "Embedded flashbacks are short: 1–2 paragraphs.",
+"h": "Embedded linked flashbacks are short: 1–2 paragraphs.",
 "o": [
 {
 "l": "Very brief (2–3 sentences)",
@@ -1672,7 +1748,7 @@ null,
 "r": "b",
 "p": 5,
 "f": "Too long! We forgot the present story. This looks like a CLASSICAL flashback.",
-"tip": "Keep an embedded flashback to 1–2 paragraphs.",
+"tip": "Keep an embedded linked flashback to 1–2 paragraphs.",
 "n": "len",
 "x": 1,
 "rt": 1,
@@ -1687,11 +1763,11 @@ null,
 "o": [
 {
 "l": "A matching moment from the past",
-"t": "Kai remembered the day Ah Ma had walked back to return extra change. “Honest hands sleep well,” she had said.",
+"t": "Last month, Ah Ma had been given too much change at the hawker stall. Kai grumbled that it was only two dollars, but she walked all the way back to return it. “Honest hands sleep well,” she told him with a smile.",
 "r": "g",
 "p": 30,
 "f": "Excellent! It matches the present moment and explains the feeling.",
-"tip": "This is a perfect strategic use of an embedded flashback!",
+"tip": "This is a perfect strategic use of an embedded linked flashback!",
 "n": "ret",
 "x": 1,
 "b": "content",
@@ -1728,7 +1804,7 @@ null,
 "o": [
 {
 "l": "Return smoothly to the action",
-"t": "Kai blinked. The train slowed at his stop. He tucked the wallet under his arm and hurried to the station office.",
+"t": "Kai blinked. The train slowed at his stop, and the doors slid open. He did not know whose wallet it was, but he knew it was not his. He tucked the wallet under his arm and hurried off the train, through the gantry and straight to the station office. His hands were a little sweaty, but his steps felt steady.\n\nThe officer smiled and found a name card inside the wallet. “The owner will be so glad,” she said. “You did the right thing.” Kai wrote his name on the form and walked home with empty pockets and a light heart. That night, he slept very well.",
 "r": "g",
 "p": 25,
 "f": "Smooth! We are straight back in the present action.",
@@ -1741,7 +1817,7 @@ null,
 "t": "Kai stayed at the hawker stall with Ah Ma and forgot the wallet.",
 "r": "b",
 "p": 0,
-"f": "We forgot the present story. An embedded flashback is a brief pause.",
+"f": "We forgot the present story. An embedded linked flashback is a brief pause.",
 "tip": "Always come back.",
 "n": "ret",
 "x": 1,
@@ -1775,7 +1851,7 @@ null,
 "o": [
 {
 "l": "Action or tension",
-"t": "Lena’s fingers trembled on the violin as the curtain rose.",
+"t": "Lena’s fingers trembled on the violin as the curtain rose. It was the night of the school concert, and the hall glowed under the bright stage lights. Parents filled every wooden chair, and the air smelled of polish and flowers. Lena had practised this piece every evening for a month, and now her solo was about to begin.",
 "r": "g",
 "p": 20,
 "f": "Strong hook! It grabs the reader straight away.",
@@ -1812,7 +1888,7 @@ null,
 "o": [
 {
 "l": "Build the tense moment",
-"t": "The hall fell silent. Hundreds of faces stared up at her, and her mouth went dry.",
+"t": "The hall fell silent. Hundreds of faces stared up at her, and her mouth went dry. She raised her bow, but her arm would not move. Her mind went blank, and even the first note had vanished. Her violin felt heavy, and her bow slipped in her sweaty fingers. Somewhere in the dark, someone coughed.",
 "r": "g",
 "p": 20,
 "f": "Good! Rising tension makes a memory feel needed.",
@@ -1873,8 +1949,8 @@ null,
 "t": "",
 "r": "o",
 "p": 10,
-"f": "Too late. The action is finished, so this is a reflection, not an embedded flashback.",
-"tip": "Embedded flashbacks work DURING the action.",
+"f": "Too late. The action is finished, so this is a reflection, not an embedded linked flashback.",
+"tip": "Embedded linked flashbacks work DURING the action.",
 "n": "len",
 "pl": "end"
 },
@@ -1893,7 +1969,7 @@ null,
 },
 "len": {
 "q": "How long should the flashback be?",
-"h": "Embedded flashbacks are short: 1–2 paragraphs.",
+"h": "Embedded linked flashbacks are short: 1–2 paragraphs.",
 "o": [
 {
 "l": "Very brief (2–3 sentences)",
@@ -1925,7 +2001,7 @@ null,
 "r": "b",
 "p": 5,
 "f": "Too long! We forgot the present story. This looks like a CLASSICAL flashback.",
-"tip": "Keep an embedded flashback to 1–2 paragraphs.",
+"tip": "Keep an embedded linked flashback to 1–2 paragraphs.",
 "n": "len",
 "x": 1,
 "rt": 1,
@@ -1940,11 +2016,11 @@ null,
 "o": [
 {
 "l": "A matching moment from the past",
-"t": "Lena remembered the practice when she had squeaked a note and Jun had clapped anyway. “Wrong notes are just steps to the right ones,” he had said.",
+"t": "Last week, Lena had squeaked a terrible note in practice and nearly cried. Her brother Jun clapped anyway. “Wrong notes are just steps to the right ones,” he said, grinning. Lena laughed, picked up her violin and tried again.",
 "r": "g",
 "p": 30,
 "f": "Excellent! It matches the present moment and explains the feeling.",
-"tip": "This is a perfect strategic use of an embedded flashback!",
+"tip": "This is a perfect strategic use of an embedded linked flashback!",
 "n": "ret",
 "x": 1,
 "b": "content",
@@ -1981,7 +2057,7 @@ null,
 "o": [
 {
 "l": "Return smoothly to the action",
-"t": "Lena blinked. She drew a deep breath, lifted her bow and played the first note.",
+"t": "Lena blinked. She drew a deep breath, lifted her bow and played the first note. Her heart was still racing, but her fingers began to move. It came out thin and wobbly, but it was a real note. She played the second, then the third, and the tune slowly grew stronger. Near the end, her bow squeaked on a wrong note. Lena kept playing.\n\nWhen the last note faded, the hall burst into applause. Lena lowered her violin and searched the crowd. In the third row, Jun was standing on his chair, clapping louder than anyone. Lena grinned and took a deep bow. Backstage, her teacher squeezed her shoulder. “Brave girl,” she whispered.",
 "r": "g",
 "p": 25,
 "f": "Smooth! We are straight back in the present action.",
@@ -1994,7 +2070,7 @@ null,
 "t": "Lena stayed in the kitchen with Jun and forgot the audience.",
 "r": "b",
 "p": 0,
-"f": "We forgot the present story. An embedded flashback is a brief pause.",
+"f": "We forgot the present story. An embedded linked flashback is a brief pause.",
 "tip": "Always come back.",
 "n": "ret",
 "x": 1,
@@ -2028,11 +2104,11 @@ null,
 "o": [
 {
 "l": "Present trigger",
-"t": "Priya threw her pencil down. The fractions were impossible, and she wanted to quit. She knew this feeling.",
+"t": "Priya threw her pencil down. The fractions were impossible, and she wanted to quit. She knew this feeling. The kitchen table was covered with books and rubber shavings, and the same question had beaten her three times. Her eyes stung, and her cheeks felt hot. Outside, the sky was turning dark, and her mother was calling her for dinner.",
 "r": "g",
 "p": 20,
 "f": "Great! A present trigger that connects to the past.",
-"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"tip": "Classic linked flashbacks start with a situation that reminds the character of something.",
 "n": "memory",
 "x": 1
 },
@@ -2065,7 +2141,7 @@ null,
 "o": [
 {
 "l": "A moment that taught a lesson",
-"t": "Last year, Priya had been scared to swim. She had gripped the pool wall, sure she would sink. “Every try makes you stronger,” Coach Lim had said. Priya had kicked again and again, and one day she had floated.",
+"t": "Last year, Priya had been scared to swim. She had gripped the pool wall, sure she would sink. The water looked deep and dark, and the other children splashed far away from her.\n\n“Every try makes you stronger,” Coach Lim said. Priya kicked and splashed again and again, swallowing water, until her arms ached. Some days she wanted to climb out and go home.\n\nThen one day, she let go of the wall and floated. She learned that hard things become easier when she keeps trying. Her smile was as wide as the pool.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory shows a lesson.",
@@ -2104,7 +2180,7 @@ null,
 "o": [
 {
 "l": "Show the situation is similar",
-"t": "Priya looked at the page. It felt like gripping the pool wall all over again, scared she would sink.",
+"t": "Priya looked at the page. It felt like gripping the pool wall all over again, scared she would sink. The fractions were the deep end, and she was frightened of going under. Her heart thumped the same way it had at the pool.",
 "r": "g",
 "p": 25,
 "f": "Excellent! The similar situation links the memory to now.",
@@ -2132,11 +2208,11 @@ null,
 "o": [
 {
 "l": "Acts differently because of the lesson",
-"t": "Priya took a deep breath and picked up her pencil. “Every try makes you stronger,” she whispered. She tried the first step. Then the next. At last, the answer appeared.",
+"t": "Priya took a deep breath and picked up her pencil. “Every try makes you stronger,” she whispered. She tried the first step. Then the next. Slowly, the numbers began to make sense. At last, the answer appeared, and she wrote it down with a grin. She drew a big tick beside it and reached for the next question. Her mother peeked in and found her smiling.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory changed how the character acts.",
-"tip": "In a linked flashback, the lesson changes what the character does.",
+"tip": "In a classic linked flashback, the lesson changes what the character does.",
 "n": "sum",
 "x": 1
 },
@@ -2179,11 +2255,11 @@ null,
 "o": [
 {
 "l": "Present trigger",
-"t": "Kiara stared at her birthday card, split in two. Hana’s face went pale, and Kiara’s cheeks burned. She had been here before.",
+"t": "Kiara stared at her birthday card, split in two. Hana’s face went pale, and Kiara’s cheeks burned. The whole class had signed that card, and Hana had only wanted to read the messages. But it had slipped from her fingers and caught on the corner of the desk. Around them, the classroom went quiet. Kiara’s throat felt tight, and angry words rushed to the tip of her tongue. She had been here before.",
 "r": "g",
 "p": 20,
 "f": "Great! A present trigger that connects to the past.",
-"tip": "Linked flashbacks start with a situation that reminds the character of something.",
+"tip": "Classic linked flashbacks start with a situation that reminds the character of something.",
 "n": "memory",
 "x": 1
 },
@@ -2216,7 +2292,7 @@ null,
 "o": [
 {
 "l": "A moment that taught a lesson",
-"t": "Last year, Kiara had snapped Mei’s favourite pencil by accident. She had waited for Mei to shout. Instead, Mei had said, “It’s okay. Accidents happen.” That kindness had made Kiara feel safe, and she had never forgotten it.",
+"t": "Last year, Kiara had snapped Mei’s favourite pencil by accident. Her hands had shaken as she held the two pieces. She had waited for Mei to shout.\n\nInstead, Mei had said, “It’s okay. Accidents happen.” She had even smiled and picked up the broken pieces herself. That kindness had made Kiara feel safe, and she had never forgotten it.\n\nKiara had learned that day that a kind word can matter more than a broken thing. She had promised herself that she would be that kind to someone one day.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory shows a lesson.",
@@ -2255,7 +2331,7 @@ null,
 "o": [
 {
 "l": "Show the situation is similar",
-"t": "Now Hana’s eyes shone with tears, just as Kiara’s once had. Kiara knew exactly how scared she felt.",
+"t": "Now Hana’s eyes shone with tears, just as Kiara’s once had. Her hands were trembling, and she held the two halves of the card as if they were made of glass. Hana looked as if she wished the floor would swallow her up. Kiara knew exactly how scared she felt.",
 "r": "g",
 "p": 25,
 "f": "Excellent! The similar situation links the memory to now.",
@@ -2283,11 +2359,11 @@ null,
 "o": [
 {
 "l": "Acts differently because of the lesson",
-"t": "Kiara took a breath and smiled. “It’s okay. Accidents happen,” she said. “Let’s stick it back together.” Hana wiped her eyes and nodded.",
+"t": "Kiara took a breath and smiled. “It’s okay. Accidents happen,” she said. “Let’s stick it back together.” Hana wiped her eyes and nodded. They fetched tape from the teacher’s desk and pressed the two halves together until the card could stand up again. Hana whispered, “Thank you,” and Kiara’s anger melted away like ice.",
 "r": "g",
 "p": 30,
 "f": "Excellent! The memory changed how the character acts.",
-"tip": "In a linked flashback, the lesson changes what the character does.",
+"tip": "In a classic linked flashback, the lesson changes what the character does.",
 "n": "sum",
 "x": 1
 },
